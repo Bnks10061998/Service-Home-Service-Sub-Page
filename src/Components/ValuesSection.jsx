@@ -11,6 +11,7 @@ import {
   EffectCube,
 } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+// import './index.css';
 
 
 import sampleImage14 from "../assets/Service/Landry.jpg";
@@ -53,11 +54,8 @@ export default function ValuesSection() {
     sampleImage1,
     sampleImage3, 
     sampleImage8,
-    sampleImage9,
-    sampleImage10,
     sampleImage11,
-    sampleImage12,
-    sampleImage15,
+    // sampleImage15,
     sampleImage16,
   ];
 

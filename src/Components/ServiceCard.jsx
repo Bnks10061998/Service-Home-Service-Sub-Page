@@ -117,11 +117,14 @@ const ServiceCard = () => {
 
   return (
     <div className="min-h-screen py-10 px-24 text-center bg-white-700">
+      <h2 className="text-[35px] underline mb-20">Our Services</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-14">
         {services.map((service, index) => (
           <div key={index} className="relative w-fit mx-auto">
             <motion.div
               className={`bg-gradient-to-br ${service.bg} rounded-2xl p-3 shadow-lg w-[320px] min-h-[280px] flex flex-col justify-between pb-12 clip-bottom-right-eye`}
+          
+
               custom={index}
               variants={cardVariants}
               initial="hidden"

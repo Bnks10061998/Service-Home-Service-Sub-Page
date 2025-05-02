@@ -282,7 +282,7 @@ const Navbar = () => {
           Home
         </a>
         <a href="/Service" className="relative hover:underline underline-offset-8">
-          Service
+          Services
         </a>
         <a href="/About" className="relative hover:underline underline-offset-8">
           About Us
