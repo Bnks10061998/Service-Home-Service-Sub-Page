@@ -120,7 +120,7 @@ const Navbar = () => {
     <nav className="bg-[#003D99] px-10 py-3 flex items-center justify-between shadow-md sticky top-0 z-50">
       {/* Left: Logo, Name, Location, Search */}
       <div className="flex items-center gap-2 text-white">
-        <a href="#" className="flex items-center space-x-2">
+        <Link to = "/" className="flex items-center space-x-2">
           {/* <img src={image} alt="Logo" className="w-12 h-12" /> */}
           {/* <h1 className="text-2xl font-semibold text-white tracking-wide uppercase font-serif hover:text-yellow-400 transition duration-300 drop-shadow-md">
             SERVY
@@ -135,7 +135,8 @@ const Navbar = () => {
           <h1 className="text-3xl font-bold text-white tracking-widest uppercase font-serif hover:scale-105 transition duration-300 drop-shadow-lg">
             SERVY
           </h1>
-        </a>
+          </Link>
+        
 
         {/* Location Dropdown */}
         <div className="relative ml-6">

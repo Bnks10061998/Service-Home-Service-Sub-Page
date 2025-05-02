@@ -117,7 +117,8 @@ const ServiceCard = () => {
 
   return (
     <div className="min-h-screen py-10 px-24 text-center bg-white-700">
-      <h2 className="text-[35px] underline mb-20">Our Services</h2>
+
+      {/* <h2 className="text-[35px] underline mb-20 ">Our Services</h2> */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-14">
         <div className="p-4 flex grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-96 gap-y-14 justify-center ml-[31rem]">
         {services.map((service, index) => (
