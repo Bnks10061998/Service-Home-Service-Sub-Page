@@ -3,7 +3,7 @@ import { FaSearch, FaTimes } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 import image from "../assets/servy.png";
-
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [showModal, setShowModal] = useState(false);
@@ -277,7 +277,18 @@ const Navbar = () => {
       </div>
 
       {/* Middle: Nav Links */}
-      <div className="flex items-center gap-11 text-white text-xl font-semibold">
+        <div className="flex items-center gap-11 text-white text-xl font-semibold">
+          <Link to="/" className="relative hover:underline underline-offset-8">
+            Home
+          </Link>
+          <Link to="/Service" className="relative hover:underline underline-offset-8">
+            Services
+          </Link>
+          <Link to="/About" className="relative hover:underline underline-offset-8">
+            About Us
+          </Link>
+        </div>
+      {/* <div className="flex items-center gap-11 text-white text-xl font-semibold">
         <a href="/" className="relative hover:underline underline-offset-8">
           Home
         </a>
@@ -287,7 +298,7 @@ const Navbar = () => {
         <a href="/About" className="relative hover:underline underline-offset-8">
           About Us
         </a>
-      </div>
+      </div> */}
 
       {/* Right: Cart + Buttons */}
       <div className="flex items-center gap-10 text-white font-medium text-lg">
