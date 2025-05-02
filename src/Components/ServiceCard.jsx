@@ -1,7 +1,7 @@
 import React from "react";
 import { MdChevronRight  } from "react-icons/md";
 import { motion } from "framer-motion";
-import logo1 from "../assets/Service/E-seva1.png";
+import logo1 from "../assets/Service/E-Seva1.png";
 import logo2 from "../assets/Service/LaundryRound1.png";
 import logo5 from "../assets/Service/HomeRepair4.jpg";
 import logo7 from "../assets/Service/MedicalRound1.jpg";
