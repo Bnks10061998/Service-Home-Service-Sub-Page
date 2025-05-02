@@ -11,31 +11,17 @@ import {
   EffectCube,
 } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-// import './index.css';
-
-
-import sampleImage14 from "../assets/Service/Landry.jpg";
 import sampleImage7 from "../assets/Service/LaundryImage.jpg";
 import sampleImage1 from "../assets/Service/Event.jpg";
 import sampleImage44 from "../assets/Service/HomeRepair7.jpg";
 import sampleImage6 from "../assets/Service/Food.jpg";
-// import sampleImage65 from "../assets/Food3.jpg";
-// import sampleImage2 from "../assets/Laundry.jpg"
 import sampleImage3 from "../assets/Service/WasteManagementImage.jpg";
-import sampleImage4 from "../assets/Service/E-sevaImage.jpg";
 import sampleImage5 from "../assets/Service/E-sevaImage1.jpg";
 import sampleImage8 from  "../assets/Service/RentalImage2.jpg";
-import sampleImage9 from  "../assets/Service/PersonalImage.jpg";
-
-import sampleImage10 from  "../assets/Service/PersonalImage1.jpg";
 import sampleImage11 from  "../assets/Service/PersonalImage2.jpg";
-import sampleImage12 from  "../assets/Service/PersonalImage3.jpg";
-import sampleImage15 from "../assets/Service/MedicalImage.jpg";
 import sampleImage16 from "../assets/Service/MedicalImage1.jpg";
-
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 export default function ValuesSection() {
   const values = [
     "Professionalism & Expertise",
@@ -55,10 +41,9 @@ export default function ValuesSection() {
     sampleImage3, 
     sampleImage8,
     sampleImage11,
-    // sampleImage15,
     sampleImage16,
   ];
-
+  
   const valueRows = [
     [values[0]],
     [values[1], values[2]],
