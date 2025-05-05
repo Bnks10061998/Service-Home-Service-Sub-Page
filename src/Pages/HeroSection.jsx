@@ -12,10 +12,6 @@ import serviceman7 from "../assets/serviceman7.jpg";
 import serviceman8 from "../assets/serviceman8.jpg";
 import serviceman9 from "../assets/serviceman9.jpg";
 
-import plumbingIcon from "../assets/pipe.png";
-import beautyIcon from "../assets/paint.png";
-import acIcon from "../assets/ac.png";
-
 // import two from "../assets/two.jpg";
 import twice from "../assets/twice.jpg";
 import team from "../assets/teamwork.png";
@@ -40,6 +36,11 @@ import bg from "../assets/bg.jpg";
 import lap1 from "../assets/lap1.jpg";
 import lap2 from "../assets/lap2.jpg";
 import lap3 from "../assets/lap3.jpg";
+
+import { IoCall } from "react-icons/io5";
+import { CiMail } from "react-icons/ci";
+import bgImage from "../assets/bg.png";
+import bgImage1 from "../assets/anotherbg.png";
 
 const services = [
   {
@@ -441,6 +442,73 @@ const HeroSection = () => {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Testominal */}
+
+      <div
+        className="bg-cover bg-center "
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        <div>
+          <div className="max-w-[2000px]  mx-auto mb-14   border-blue-400 p-6 flex flex-col sm:flex-row justify-between items-center text-center space-y-6 sm:space-y-0 sm:space-x-6 bg-white/50 backdrop-blur-md rounded-md h-[200px]">
+            <div className="flex ml-80 gap-44">
+              {/* Stat 1 */}
+              <div>
+                <h2 className="text-3xl font-bold">52 +</h2>
+                <p className="text-gray-700 font-semibold text-xl">
+                  Trained Service Experts
+                </p>
+              </div>
+
+              {/* Stat 2 */}
+              <div>
+                <h2 className="text-3xl font-bold">7+</h2>
+                <p className="text-gray-700 font-semibold text-xl">Happy Customers</p>
+              </div>
+
+              {/* Stat 3 */}
+              <div>
+                <h2 className="text-3xl font-bold flex items-center justify-center">
+                  4.9 <span className="text-yellow-500 ml-1">★</span>
+                </h2>
+                <p className="text-gray-700 font-semibold text-xl">Customer Rating</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* contact section */}
+
+      <div
+        className="relative w-full h-[180px] mb-12 bg-cover bg-center"
+        style={{ backgroundImage: `url(${bgImage1})` }}
+      >
+        {/* Glassy Overlay that fills the whole image */}
+        <div className="absolute inset-0 bg-white/50 backdrop-blur-md flex flex-col justify-center items-center text-center px-4">
+          <h2 className="text-3xl font-bold text-blue-900 mb-6">
+            Need Help? Book Your Order by Phone or Email
+          </h2>
+
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Phone */}
+            <button className="flex items-center gap-2 bg-blue-900 text-white px-8 py-4 rounded-lg shadow-md">
+              <span>
+                <IoCall />
+              </span>{" "}
+              +91 98765 43210
+            </button>
+
+            {/* Email */}
+            <button className="flex items-center gap-2 bg-blue-900 text-white px-8 py-4 rounded-lg shadow-md">
+              <span>
+                <CiMail />
+              </span>{" "}
+              servy@gmail.com
+            </button>
+          </div>
+        </div>
       </div>
 
       {/* join client */}

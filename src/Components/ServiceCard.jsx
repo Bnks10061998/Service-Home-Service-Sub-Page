@@ -117,9 +117,6 @@ const ServiceCard = () => {
 
   return (
     <div className="min-h-screen py-10 px-24 text-center bg-white-700">
-      {/* <h2 className="text-[35px] md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-600 underline underline-offset-8 decoration-4 decoration-cyan-400 tracking-wide mb-20">
-        Our Services
-      </h2> */}
       <h2 className="text-[35px] underline underline-offset-4 mb-20"  
       style={{ color: '#013686',textDecorationColor: '#013686' }}>Our Services</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-14">
@@ -163,7 +160,7 @@ const ServiceCard = () => {
             <motion.button
                 onClick={() => handleBookNow(service.link)}
                 className="group absolute bottom-[-4px] right-[-4px] w-12 h-12 rounded-full border-4 border-blue-500 flex items-center justify-center bg-white text-[#013686] shadow-xl transition-all duration-100 ease-in-out hover:bg-gradient-to-r hover:from-blue-400 hover:via-indigo-400 hover:to-blue-400 hover:text-white z-10"
-                whileHover={{ scale: 1.0, rotate: 15 }}
+                whileHover={{ scale: 1.0, rotate: -15 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
               >
                 <MdChevronRight className="text-3xl" />

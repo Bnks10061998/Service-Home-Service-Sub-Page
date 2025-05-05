@@ -4,8 +4,18 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
 import image from "../assets/servy.png";
 import { Link } from "react-router-dom";
+import {
+  FiUserPlus,
+  FiLogIn,
+  FiChevronDown,
+  FiChevronUp,
+} from "react-icons/fi";
+import { CgProfile } from "react-icons/cg";
+import { GiWallet } from "react-icons/gi";
+import { FaBoxOpen } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({count = 3 }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [address, setAddress] = useState("");
 
@@ -303,16 +313,73 @@ const Navbar = () => {
 
       {/* Right: Cart + Buttons */}
       <div className="flex items-center gap-10 text-white font-medium text-lg">
-        <div className="w-12 h-12 flex items-center justify-center rounded-full transition duration-300 cursor-pointer hover:bg-white hover:shadow-md">
-          <MdOutlineShoppingCart className="text-3xl text-white hover:text-[#013686]" />
+        <div className="group relative w-12 h-12 flex items-center justify-center rounded-full transition duration-300 cursor-pointer hover:bg-white hover:shadow-md">
+          {/* Cart Icon */}
+          <MdOutlineShoppingCart className="text-white group-hover:text-[#013686] text-3xl transition" />
+
+          {/* Red Badge */}
+          {count > 0 && (
+            <span className="absolute top-1 right-1 bg-red-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+              {count}
+            </span>
+          )}
         </div>
 
-        <button className="bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md  border-[1px] border-white hover:bg-[#003D99] hover:text-white transition ">
-          Login
-        </button>
-        <button className="border border-white text-xl px-5 py-2 rounded-lg font-semibold hover:bg-white hover:text-[#003D99] transition ">
-          Signup
-        </button>
+        <div className="relative inline-block text-left">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white hover:bg-[#003D99] hover:text-white transition"
+          >
+            <FiLogIn size={20} />
+            Login
+            {isOpen ? <FiChevronUp size={20} /> : <FiChevronDown size={20} />}
+          </button>
+
+          {isOpen && (
+            <div className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+              <div className="py-1 text-[#003D99]">
+                {/* Signup */}
+                <a
+                  href="/signup"
+                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
+                >
+                  <FiUserPlus size={18} />
+                  Signup
+                </a>
+
+                {/* Divider */}
+                <hr className="my-1 border-t border-gray-300" />
+
+                {/* My Profile */}
+                <a
+                  href="/profile"
+                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
+                >
+                  <CgProfile size={18} />
+                  My Profile
+                </a>
+
+                {/* My Orders */}
+                <a
+                  href="/orders"
+                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
+                >
+                  <GiWallet size={18} />
+                  My Orders
+                </a>
+
+                {/* My Wallet */}
+                <a
+                  href="/wallet"
+                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
+                >
+                  <FaBoxOpen size={18} />
+                  My Wallet
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </nav>
   );

@@ -32,7 +32,7 @@ export default function Footer() {
           <div className="flex items-start gap-2  text-gray-700 leading-relaxed max-w-xs">
             <MdLocationOn className="text-blue-700 text-lg mt-0.5" />
             <p className="text-base">
-              No. 9, Thendral Nagar ,
+              No. 10, Thendral Nagar ,
               <br />
               Sathuvachari, Vellore - 632009
             </p>
