@@ -289,7 +289,7 @@ const Navbar = ({count = 3 }) => {
 
       {/* Middle: Nav Links */}
         <div className="flex items-center gap-11 text-white text-xl font-semibold">
-          <Link to="/" className="relative hover:underline underline-offset-8">
+          <Link to="/" className="relative hover:underline  underline-offset-8">
             Home
           </Link>
           <Link to="/Service" className="relative hover:underline underline-offset-8">

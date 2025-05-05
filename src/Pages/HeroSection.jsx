@@ -497,7 +497,7 @@ const HeroSection = () => {
               <span>
                 <IoCall />
               </span>{" "}
-              +91 98765 43210
+              +91 95973 66741
             </button>
 
             {/* Email */}
