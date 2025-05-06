@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <ScrollToTopButton />
+     
       {/* <HeroSection /> */}
       {/* <ServiceCard />
       <ValuesSection /> */}
@@ -38,7 +38,9 @@ const App = () => {
         <Route path="/" element={<HeroSection />} />
         <Route path="/Service" element={<ServicePage />} />
       </Routes>
+      <ScrollToTopButton />
       <Footer />
+
     </div>
   );
 };

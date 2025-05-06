@@ -289,14 +289,17 @@ const Navbar = ({count = 3 }) => {
 
       {/* Middle: Nav Links */}
         <div className="flex items-center gap-11 text-white text-xl font-semibold">
-          <Link to="/" className="relative hover:underline  underline-offset-8">
+          <Link to="/" className="group relative">
             Home
+            <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0 transform -translate-x-1/2 group-hover:translate-x-0"></span>
           </Link>
-          <Link to="/Service" className="relative hover:underline underline-offset-8">
+          <Link to="/Service" className="group relative">
             Services
+            <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0 transform -translate-x-1/2 group-hover:translate-x-0"></span>
           </Link>
-          <Link to="/About" className="relative hover:underline underline-offset-8">
+          <Link to="/About" className="group relative">
             About Us
+            <span className="absolute left-1/2 bottom-0 h-[2px] w-0 bg-white transition-all duration-300 ease-in-out group-hover:w-full group-hover:left-0 transform -translate-x-1/2 group-hover:translate-x-0"></span>
           </Link>
         </div>
       {/* <div className="flex items-center gap-11 text-white text-xl font-semibold">
@@ -325,60 +328,61 @@ const Navbar = ({count = 3 }) => {
           )}
         </div>
 
-        <div className="relative inline-block text-left">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white hover:bg-[#003D99] hover:text-white transition"
-          >
+        <div className="relative inline-block text-left group">
+          <button className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white group-hover:bg-[#003D99] group-hover:text-white transition">
             <FiLogIn size={20} />
             Login
-            {isOpen ? <FiChevronUp size={20} /> : <FiChevronDown size={20} />}
+            {/* Down Arrow (default) */}
+            <FiChevronDown
+              size={20}
+              className="group-hover:hidden transition duration-200"
+            />
+            {/* Up Arrow (on hover) */}
+            <FiChevronUp
+              size={20}
+              className="hidden group-hover:inline transition duration-200"
+            />
           </button>
 
-          {isOpen && (
-            <div className="absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-              <div className="py-1 text-[#003D99]">
-                {/* Signup */}
-                <a
-                  href="/signup"
-                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
-                >
-                  <FiUserPlus size={18} />
-                  Signup
-                </a>
+          
+            <div className="absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-500">
+            <div className="py-1 text-[#003D99] flex flex-col items-center text-center">
+              <a
+                href="/signup"
+                className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
+              >
+                <FiUserPlus size={18} />
+                Signup
+              </a>
 
-                {/* Divider */}
-                <hr className="my-1 border-t border-gray-300" />
+              <hr className="my-1 border-t border-gray-300 w-full" />
 
-                {/* My Profile */}
-                <a
-                  href="/profile"
-                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
-                >
-                  <CgProfile size={18} />
-                  My Profile
-                </a>
+              <a
+                href="/profile"
+                className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
+              >
+                <CgProfile size={18} />
+                My Profile
+              </a>
 
-                {/* My Orders */}
-                <a
-                  href="/orders"
-                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
-                >
-                  <GiWallet size={18} />
-                  My Orders
-                </a>
+              <a
+                href="/orders"
+                className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
+              >
+                <GiWallet size={18} />
+                My Orders
+              </a>
 
-                {/* My Wallet */}
-                <a
-                  href="/wallet"
-                  className="flex items-center gap-2 px-4 py-2 text-sm hover:bg-[#003D99] hover:text-white transition"
-                >
-                  <FaBoxOpen size={18} />
-                  My Wallet
-                </a>
-              </div>
+              <a
+                href="/wallet"
+                className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
+              >
+                <FaBoxOpen size={18} />
+                My Wallet
+              </a>
             </div>
-          )}
+          </div>
+          
         </div>
       </div>
     </nav>
