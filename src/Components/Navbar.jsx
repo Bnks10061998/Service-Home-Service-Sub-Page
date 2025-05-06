@@ -345,7 +345,7 @@ const Navbar = ({count = 3 }) => {
           </button>
 
           
-            <div className="absolute right-0 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-500">
+            <div className="absolute right-0 left-0.5 mt-0.5 w-42 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-500">
             <div className="py-1 text-[#003D99] flex flex-col items-center text-center">
               <a
                 href="/signup"
