@@ -329,57 +329,64 @@ const Navbar = ({count = 3 }) => {
         </div>
 
         <div className="relative inline-block text-left group">
-          <button className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white group-hover:bg-[#003D99] group-hover:text-white transition">
+          {/* <button className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white group-hover:bg-[#003D99] group-hover:text-white transition">
             <FiLogIn size={20} />
             Login
-            {/* Down Arrow (default) */}
             <FiChevronDown
               size={20}
               className="group-hover:hidden transition duration-200"
             />
-            {/* Up Arrow (on hover) */}
             <FiChevronUp
               size={20}
               className="hidden group-hover:inline transition duration-200"
             />
-          </button>
-
+          </button> */}
+<Link to="/login" className="inline-block">
+  <button
+    className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white group-hover:bg-[#003D99] group-hover:text-white transition"
+  >
+    <FiLogIn size={20} />
+    Login
+    <FiChevronDown size={20} className="group-hover:hidden transition duration-200" />
+    <FiChevronUp size={20} className="hidden group-hover:inline transition duration-200" />
+  </button>
+</Link>
           
             <div className="absolute right-0 left-0.5 mt-0.5 w-42 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-500">
             <div className="py-1 text-[#003D99] flex flex-col items-center text-center">
-              <a
-                href="/signup"
+              <Link
+                to="/signup"
                 className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
               >
                 <FiUserPlus size={18} />
                 Signup
-              </a>
+              </Link>
 
               <hr className="my-1 border-t border-gray-300 w-full" />
 
-              <a
-                href="/profile"
+              <Link
+                to="/profile"
                 className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
               >
                 <CgProfile size={18} />
                 My Profile
-              </a>
+              </Link>
 
-              <a
-                href="/orders"
+              <Link
+                to="/myorders"
                 className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
               >
                 <GiWallet size={18} />
                 My Orders
-              </a>
+              </Link>
 
-              <a
-                href="/wallet"
+              <Link
+                to="/wallet"
                 className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
               >
                 <FaBoxOpen size={18} />
                 My Wallet
-              </a>
+              </Link>
             </div>
           </div>
           

@@ -25,6 +25,11 @@ import ScrollToTopButton from "./Components/ScrollToTopButton";
 // import ServiceCard from './Components/ServiceCard';
 // import ValuesSection from "./Components/ValuesSection";
 import ServicePage from "./Components/ServicePage";
+import Login from "./Pages/Login";
+import SignUpPage from "./Pages/SignUpPage";
+import ForgotPasswordScreen from "./Pages/ForgotPasswordScreen";
+import SetPasswordScreen from "./Pages/SetPasswordScreen";
+import MyOrders from "./Pages/MyOrder/MyOrders";
 
 const App = () => {
   return (
@@ -37,6 +42,11 @@ const App = () => {
       <Routes>
         <Route path="/" element={<HeroSection />} />
         <Route path="/Service" element={<ServicePage />} />
+        <Route path="/myorders" element={<MyOrders />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+        <Route path="/reset-password" element={<SetPasswordScreen />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />

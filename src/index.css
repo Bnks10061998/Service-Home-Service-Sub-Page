@@ -7,3 +7,10 @@
 }
 
 
+.input-style {
+  @apply w-full px-4 pt-3 pb-2 border border-gray-500 rounded text-sm bg-transparent;
+}
+
+.myOrder_btn{
+@apply flex-1 border border-gray-300 text-sm py-2 rounded-xl hover:bg-gray-100
+}
