@@ -9,7 +9,7 @@ import bgImage from "../assets/bgImg.png";
 import EllipseRight from "../assets/EllipseRight.png";
 import { useFormik } from "formik";
 import { registerSchema } from "../Pages/loginSchema/Schema";
-import { userServices } from "../Instance/UserServices";
+import { userServices } from "../Instance/userServices.js";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../Common/FireBase.js";
 import { Link } from "react-router-dom";

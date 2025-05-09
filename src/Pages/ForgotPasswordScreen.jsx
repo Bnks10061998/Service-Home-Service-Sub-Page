@@ -12,7 +12,7 @@ import EllipseRight from "../assets/EllipseRight.png";
 import { useFormik } from "formik";
 import { forgot_password } from "../Pages/loginSchema/Schema";
 import { toast } from 'react-toastify';
-import { userServices } from "../Instance/UserServices";
+import { userServices } from "../Instance/userServices.js";
 
 const ForgotPasswordScreen = () => {
   const [showCodeField, setShowCodeField] = useState(true); // <-- to control code input

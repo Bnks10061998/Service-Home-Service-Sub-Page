@@ -10,7 +10,7 @@ import bgImage from "../assets/bgImg.png";
 import EllipseRight from "../assets/EllipseRight.png";
 import { useFormik } from "formik";
 import { loginSchema } from "../Pages/loginSchema/Schema";
-import { userServices } from "../Instance/UserServices";
+import { userServices } from "../Instance/userServices.js";
 import { toast } from 'react-toastify';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../Common/FireBase.js";
