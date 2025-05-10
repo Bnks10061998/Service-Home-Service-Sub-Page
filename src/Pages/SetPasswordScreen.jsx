@@ -9,6 +9,7 @@ import bgImage from "../assets/bgImg.png";
 import EllipseRight from "../assets/EllipseRight.png";
 import { useFormik } from "formik";
 import { reset_password } from "../Pages/loginSchema/Schema";
+import BackgroundDecor from "./BackgroundDecor";
 
 const SetPasswordScreen = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -38,29 +39,7 @@ const SetPasswordScreen = () => {
             className="min-h-screen h-screen flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative"
            
           >
-           <img
-              src={bgImage}
-              alt="Background"
-              className="fixed bottom-0 left-0 w-full z-[-1] h-[100%] "
-            />
-          {/* Decorative Images */}
-          <img
-            src={EllipseRight}
-            alt="Top Right"
-            className="fixed top-0 right-[-20px] m-2 md:m-4 w-20 md:w-28 h-auto z-0"
-          />
-          
-          <img
-            src={EllipseRight}
-            alt="Top Left"
-            className="fixed top-10 md:top-0 left-0 m-2 md:m-4 w-20 md:w-28 h-auto z-0 rotate-[270deg]"
-          />
-          
-          <img
-            src={EllipseRight}
-            alt="Bottom Left"
-            className="fixed top-20 left-[-10px] m-2 md:m-4 w-20 md:w-28 h-auto z-0 rotate-[180deg] "
-          />
+          <BackgroundDecor/>
           {/* Left */}
           <div className="w-full md:w-1/2 flex justify-center items-center mt-0 md:mt-32">
         <form className="w-full max-w-lg px-4 md:px-0 " onSubmit={handleSubmit} >
@@ -81,7 +60,7 @@ const SetPasswordScreen = () => {
           <div className="relative mb-6 md:mb-8">
           <label
             htmlFor="password"
-            className="absolute -top-3 left-3 bg-white  px-1 text-sm md:text-base text-black rounded-lg"
+            className="absolute -top-3 left-3 bg-white bg-opacity-30 px-1 text-sm md:text-base text-black rounded-lg"
           >
           Create  Password
           </label>

@@ -75,7 +75,6 @@ const OrderCard = ({ order }) => {
   </span>
 </div>
 
-        
         <hr className="my-3 border-t-[3px] border-gray-300" />
         <div className="mt-3 space-y-1 text-sm text-gray-600">
           <div className="flex items-center gap-2">

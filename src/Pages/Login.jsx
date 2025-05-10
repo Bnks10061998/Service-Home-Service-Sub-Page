@@ -15,6 +15,7 @@ import { toast } from 'react-toastify';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../Common/FireBase.js";
 import { Link } from "react-router-dom";
+import BackgroundDecor from "./BackgroundDecor.jsx";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -72,41 +73,16 @@ const Login = () => {
 
   return (
     <div
-    className="min-h-screen h-screen flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative"
-   
-  >
-   <img
-      src={bgImage}
-      alt="Background"
-      className="fixed bottom-0 left-0 w-full z-[-1] h-[120%] "
-    />
-  
- <img
-  src={EllipseRight}
-  alt="Top Right"
-  className="fixed top-0 right-[-20px] m-2 md:m-4 w-20 md:w-28 h-auto z-0"
-/>
-
-<img
-  src={EllipseRight}
-  alt="Top Left"
-  className="fixed top-10 md:top-0 left-0 m-2 md:m-4 w-20 md:w-28 h-auto z-0 rotate-[270deg]"
-/>
-
-<img
-  src={EllipseRight}
-  alt="Bottom Left"
-  className="fixed top-20 left-[-10px] m-2 md:m-4 w-20 md:w-28 h-auto z-0 rotate-[180deg] "
-/>
-
+    className="min-h-screen h-screen flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative"  >
+ <BackgroundDecor/>
       {/* Left Image */}
-      <div className="hidden md:flex w-full md:w-1/2 items-center justify-center md:ml-32 md:mt-32 ">
+      <div className="hidden md:flex w-full md:w-1/2 items-center justify-center md:ml-32 md:mt-28 ">
         <img src={loginImg} alt="Illustration" className="w-3/4 max-w-md" />
       </div>
 
       {/* Right Form */}
       <form
-          className="md:w-1/2 md:mr-52 px-6 md:px-12 mt-16 md:mt-32 md:pl-24"
+          className="md:w-1/2 w-full md:mr-52 px-6 md:px-12 mt-[-60px] md:mt-28 md:pl-24"
           onSubmit={handleSubmit}
         >
           <h2 className="mb-1 text-2xl md:text-[33px] font-semibold">Login</h2>
