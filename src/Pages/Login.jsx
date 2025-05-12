@@ -73,7 +73,7 @@ const Login = () => {
 
   return (
     <div
-    className="min-h-screen h-screen flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative"  >
+    className="flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative"  >
  <BackgroundDecor/>
       {/* Left Image */}
       <div className="hidden md:flex w-full md:w-1/2 items-center justify-center md:ml-32 md:mt-28 ">
@@ -82,7 +82,7 @@ const Login = () => {
 
       {/* Right Form */}
       <form
-          className="md:w-1/2 w-full md:mr-52 px-6 md:px-12 mt-[-60px] md:mt-28 md:pl-24"
+          className="md:w-1/2 w-full md:mr-52 px-6 md:px-12 mt-[60px] md:mt-28 md:pl-24"
           onSubmit={handleSubmit}
         >
           <h2 className="mb-1 text-2xl md:text-[33px] font-semibold">Login</h2>

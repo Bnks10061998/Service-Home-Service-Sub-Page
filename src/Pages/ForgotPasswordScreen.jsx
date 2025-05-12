@@ -58,11 +58,11 @@ const ForgotPasswordScreen = () => {
   };
 
   return (
-    <div className="min-h-screen h-screen flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative">
+    <div className="flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative">
     <BackgroundDecor/>
       <div
         className={`w-full md:w-1/2 flex justify-center items-center  ${
-          showCodeField ? 'md:mt-24 mt-[-70px]' : 'md:mt-40 mt-[-70px]' 
+          showCodeField ? 'md:mt-24 mt-[80px]' : 'md:mt-40 mt-[120px]' 
         } md:ml-20`}
       >
         <form className="w-full max-w-lg px-4 md:px-0" onSubmit={handleSubmit}>

@@ -15,7 +15,7 @@
 // export default App;
 
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route,useLocation  } from "react-router-dom";
 //import Services from "./Pages/Services"; // Import your Services component
 //import ACRepair from "./Pages/ACRepari"; // Import other pages you're routing to
 import Navbar from "./Components/Navbar";
@@ -32,8 +32,16 @@ import SetPasswordScreen from "./Pages/SetPasswordScreen";
 import MyOrders from "./Pages/MyOrder/MyOrders";
 
 const App = () => {
+
+  const location = useLocation();
+
+  // Define paths where footer should not appear
+  const hideFooterPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
+  const shouldHideFooter = hideFooterPaths.includes(location.pathname);
+
+
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
      
       {/* <HeroSection /> */}
@@ -49,8 +57,10 @@ const App = () => {
         <Route path="/reset-password" element={<SetPasswordScreen />} />
       </Routes>
       <ScrollToTopButton />
-      <Footer />
 
+      {!shouldHideFooter && <Footer />}
+        {/* <Login/> */}
+        {/* <MyOrders/> */}
     </div>
   );
 };

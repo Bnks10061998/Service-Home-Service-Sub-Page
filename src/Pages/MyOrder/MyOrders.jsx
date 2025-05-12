@@ -66,7 +66,7 @@ export default function MyOrders() {
   const statuses = ["On Progress", "Delivered", "Cancelled"];
 
   return (
-    <div className="p-4 max-w-6xl mx-auto ">
+    <div className="p-4 max-w-6xl w-full mx-auto ">
       <button className="text-sm text-gray-500 mb-2">&lt; Back</button>
       <h2 className="text-2xl text-[#013686] font-semibold">My Orders</h2>
       <p className="text-sm text-gray-500 mb-4">

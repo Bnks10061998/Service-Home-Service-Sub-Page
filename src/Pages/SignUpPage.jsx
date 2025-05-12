@@ -69,14 +69,14 @@ const SignUpPage = () => {
   const errorCount = Object.keys(errors).length;
 
   return (
-    <div className="min-h-screen h-screen flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative">
+    <div className=" flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative">
       <BackgroundDecor/>
       {/* Left Image */}
       <div className="hidden w-full md:w-[38%] md:flex items-center justify-center md:ml-24 pr-16 ">
         <img src={signupImg} alt="Illustration" className=" max-w-md" />
       </div>
 
-      <div className="w-full mt-[-170px]  md:mr-44 md:ml-16 flex items-center justify-center px-4 bg-scroll">
+      <div className="w-full mt-[-220px] md:mt-[-170px] mb-10 md:mb-0 md:mr-44 md:ml-16 flex items-center justify-center px-4 bg-scroll">
       
         <form
           onSubmit={handleSubmit}

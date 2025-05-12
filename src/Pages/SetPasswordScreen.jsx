@@ -36,12 +36,12 @@ const SetPasswordScreen = () => {
 
   return (
      <div
-            className="min-h-screen h-screen flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative"
+            className="flex flex-col md:flex-row px-6 md:px-0 items-center justify-center md:items-start md:justify-normal relative"
            
           >
           <BackgroundDecor/>
           {/* Left */}
-          <div className="w-full md:w-1/2 flex justify-center items-center mt-0 md:mt-32">
+          <div className="w-full md:w-1/2 flex justify-center items-center mt-20 md:mt-32">
         <form className="w-full max-w-lg px-4 md:px-0 " onSubmit={handleSubmit} >
         
         {/* <button className="flex items-center gap-2 font-light text-sm mb-4">
