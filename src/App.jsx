@@ -14,6 +14,11 @@ import SignUpPage from "./Pages/SignUpPage";
 import ForgotPasswordScreen from "./Pages/ForgotPasswordScreen";
 import SetPasswordScreen from "./Pages/SetPasswordScreen";
 import MyOrders from "./Pages/MyOrder/MyOrders";
+import BookingConfirmation from "./Pages/BookingConfimation";
+
+import ServiceList from "./Components/ServiceList";
+import CartPage from "./Components/CartPage";
+import LaundryServiceDetail from "./Components/LaundryServiceDetail";
 
 const App = () => {
   const [filters, setFilters] = useState({
@@ -44,9 +49,15 @@ const App = () => {
        <Route path="/" element={<HeroSection />} />
         <Route path="/Service" element={<ServicePage />} />
          <Route path="/myorders" element={<MyOrders />} />
+         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
         <Route path="/reset-password" element={<SetPasswordScreen />} />
+        <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+        <Route path="/laundry-details/:id" element={<LaundryServiceDetail />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/serviceList" element={<ServiceList/>} filters={filters} />
+        
       </Routes>
       <ScrollToTopButton />
         {/* {open && (
@@ -59,6 +70,12 @@ const App = () => {
         {/* <Login/> */}
         {/* <MyOrders/> */}
     </div>
+
+ 
+
+     
+
+
   );
 };
 
