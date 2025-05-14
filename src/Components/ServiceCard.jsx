@@ -11,6 +11,7 @@ import logo4 from "../assets/Service/RentalRound1.png";
 import logo6 from "../assets/Service/WasteManagementRound.jpg";
 import logo8 from "../assets/Service/PersonalCareRound.jpg";
 import "./styles.css"; 
+import HomeServiceCard from './HomeServiceCard';
 
 
 const services = [
@@ -18,7 +19,7 @@ const services = [
     icon: logo2,
     title: "Laundry Services",
     desc: "Fresh, crisp, and professionally cleaned clothes delivered to your doorstep.",
-    link: "/laundry",
+    link: "/serviceList",
     bg: "from-indigo-100 via-blue-100 to-indigo-200",
     iconWidth: "96px",
     iconHeight: "96px",

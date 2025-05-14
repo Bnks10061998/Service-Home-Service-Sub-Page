@@ -1,20 +1,4 @@
-// import React from "react";
-// import Services from "./Pages/Services";
-// import HeroSection from "./Pages/HeroSection";
-
-// const App = () => {
-//   return (
-//     <div>
-
-//       <HeroSection />
-//       <Services />
-//     </div>
-//   );
-// };
-
-// export default App;
-
-import React from "react";
+import { React, useState } from "react";
 import { Routes, Route,useLocation  } from "react-router-dom";
 //import Services from "./Pages/Services"; // Import your Services component
 //import ACRepair from "./Pages/ACRepari"; // Import other pages you're routing to
@@ -30,10 +14,17 @@ import SignUpPage from "./Pages/SignUpPage";
 import ForgotPasswordScreen from "./Pages/ForgotPasswordScreen";
 import SetPasswordScreen from "./Pages/SetPasswordScreen";
 import MyOrders from "./Pages/MyOrder/MyOrders";
-import FeedbackModal from "./Pages/MyOrder/FeedbackModal";
-import BookingConfirmation from "./Pages/BookingConfimation";
 
 const App = () => {
+  const [filters, setFilters] = useState({
+    sortOrder: "",
+    selectedCategory: "all",
+    selectedRatings: [],
+  });
+
+  const handleFilterChange = (ratings, sortOrder, category) => {
+    setFilters({ selectedRatings: ratings, sortOrder, selectedCategory: category });
+  };
 
   const location = useLocation();
 
@@ -54,12 +45,9 @@ const App = () => {
         <Route path="/Service" element={<ServicePage />} />
          <Route path="/myorders" element={<MyOrders />} />
         <Route path="/signup" element={<SignUpPage />} />
-       <Route path="/login" element={<Login />} />
-       <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
-       <Route path="/reset-password" element={<SetPasswordScreen />} />
-       <Route path="/booking-confirm" element={<BookingConfirmation />} />
-
-     </Routes>
+        <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+        <Route path="/reset-password" element={<SetPasswordScreen />} />
+      </Routes>
       <ScrollToTopButton />
         {/* {open && (
           <FeedbackModal

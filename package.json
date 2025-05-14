@@ -10,12 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.8.1",
     "aos": "^2.3.4",
     "axios": "^1.9.0",
     "firebase": "^11.7.1",
     "formik": "^2.4.6",
     "framer-motion": "^12.9.4",
+    "heroicons": "^2.2.0",
     "leaflet": "^1.9.4",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.503.0",
