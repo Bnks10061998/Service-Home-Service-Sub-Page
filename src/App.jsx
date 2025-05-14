@@ -1,20 +1,4 @@
-// import React from "react";
-// import Services from "./Pages/Services";
-// import HeroSection from "./Pages/HeroSection";
-
-// const App = () => {
-//   return (
-//     <div>
-
-//       <HeroSection />
-//       <Services />
-//     </div>
-//   );
-// };
-
-// export default App;
-
-import React from "react";
+import { React, useState } from "react";
 import { Routes, Route,useLocation  } from "react-router-dom";
 //import Services from "./Pages/Services"; // Import your Services component
 //import ACRepair from "./Pages/ACRepari"; // Import other pages you're routing to
@@ -31,7 +15,23 @@ import ForgotPasswordScreen from "./Pages/ForgotPasswordScreen";
 import SetPasswordScreen from "./Pages/SetPasswordScreen";
 import MyOrders from "./Pages/MyOrder/MyOrders";
 
+import Header from "./Components/Header";
+import Search from "./Components/Search";
+import Filters from "./Components/Filters";
+import ServiceList from "./Components/ServiceList";
+import CartPage from "./Components/CartPage";
+import LaundryServiceDetail from "./Components/LaundryServiceDetail";
+
 const App = () => {
+  const [filters, setFilters] = useState({
+    sortOrder: "",
+    selectedCategory: "all",
+    selectedRatings: [],
+  });
+
+  const handleFilterChange = (ratings, sortOrder, category) => {
+    setFilters({ selectedRatings: ratings, sortOrder, selectedCategory: category });
+  };
 
   const location = useLocation();
 
@@ -55,6 +55,11 @@ const App = () => {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
         <Route path="/reset-password" element={<SetPasswordScreen />} />
+        <Route path="/laundry-details/:id" element={<LaundryServiceDetail />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/serviceList" element={<ServiceList/>} filters={filters} />
+
+        
       </Routes>
       <ScrollToTopButton />
 
