@@ -9,19 +9,35 @@ import {
   FiLogIn,
   FiChevronDown,
   FiChevronUp,
+  FiUser,
+  FiHeart,
 } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { GiWallet } from "react-icons/gi";
 import { FaBoxOpen } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { BiLogOut  } from "react-icons/bi";
+import { logout } from "../Redux/authReducer";
 
 const Navbar = ({ count = 3 }) => {
+  const dispatch = useDispatch();
+  const { user, loading, error } = useSelector((state) => state.auth);
+
+  let userName = user?.data?.user?.firstName;
+  userName = userName
+    ? userName.charAt(0).toUpperCase() + userName.slice(1)
+    : "";
+
   const [isOpen, setIsOpen] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [address, setAddress] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu
   const [isSearchOpen, setIsSearchOpen] = useState(false); // Mobile search input toggle
   const [showMobileLocationModal, setShowMobileLocationModal] = useState(false);
-
+  const handleLogout = () => {
+    dispatch(logout());
+    localStorage.removeItem('user');
+  };
   const detectLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -93,6 +109,9 @@ const Navbar = ({ count = 3 }) => {
 
     return () => clearTimeout(timeout);
   }, [charIndex, isDeleting, serviceIndex, searchTerm]);
+
+
+  
 
   return (
     <>
@@ -187,7 +206,9 @@ const Navbar = ({ count = 3 }) => {
                     </div>
 
                     {/* Divider */}
-                    <div className="text-center my-2 text-gray-400 text-sm">or</div>
+                    <div className="text-center my-2 text-gray-400 text-sm">
+                      or
+                    </div>
 
                     {/* Detect Location */}
                     <button
@@ -261,72 +282,101 @@ const Navbar = ({ count = 3 }) => {
             </div>
 
             <div className="relative inline-block text-left group">
-              {/* <button className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white group-hover:bg-[#003D99] group-hover:text-white transition">
-                <FiLogIn size={20} />
-                Login
-                <FiChevronDown
-                  size={20}
-                  className="group-hover:hidden transition duration-200"
-                />
-                <FiChevronUp
-                  size={20}
-                  className="hidden group-hover:inline transition duration-200"
-                />
-              </button> */}
               <Link to="/login" className="inline-block">
-                <button
-                  className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white group-hover:bg-[#003D99] group-hover:text-white transition"
-                >
-                  <FiLogIn size={20} />
-                  Login
-                  <FiChevronDown
-                    size={20}
-                    className="group-hover:hidden transition duration-200"
-                  />
-                  <FiChevronUp
-                    size={20}
-                    className="hidden group-hover:inline transition duration-200"
-                  />
+                <button className="flex items-center gap-2 bg-white text-[#003D99] text-xl font-semibold px-5 py-2 rounded-lg shadow-md border-[1px] border-white group-hover:bg-[#003D99] group-hover:text-white transition">
+                  {user ? (
+                    <>
+                      <FiUser size={20} />
+                      {userName || "User"}
+                      <FiChevronDown
+                        size={20}
+                        className="group-hover:hidden transition duration-200"
+                      />
+                      <FiChevronUp
+                        size={20}
+                        className="hidden group-hover:inline transition duration-200"
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <FiLogIn size={20} />
+                      Login
+                      <FiChevronDown
+                        size={20}
+                        className="group-hover:hidden transition duration-200"
+                      />
+                      <FiChevronUp
+                        size={20}
+                        className="hidden group-hover:inline transition duration-200"
+                      />
+                    </>
+                  )}
                 </button>
               </Link>
+              {!user && ( <div className="absolute right-0 left-0.5  w-42 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-500">
+    <div className="py-1 text-[#003D99] flex flex-col items-center text-center">
+      <Link
+        to="/signup"
+        className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
+      >
+        <FiUserPlus size={18} />
+        Signup
+      </Link>
+      </div>
+      </div>)}
+              {user && (
+  <div className="absolute right-0 left-0.5 w-42 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-500">
+    <div className="py-1 text-[#003D99] flex flex-col items-center text-center">
+      {/* <Link
+        to="/signup"
+        className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
+      >
+        <FiUserPlus size={18} />
+        Signup
+      </Link>
 
-              <div className="absolute right-0 left-0.5 mt-0.5 w-42 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-500">
-                <div className="py-1 text-[#003D99] flex flex-col items-center text-center">
-                  <Link
-                    to="/signup"
-                    className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
-                  >
-                    <FiUserPlus size={18} />
-                    Signup
-                  </Link>
+      <hr className="my-1 border-t border-gray-300 w-full" /> */}
+ <button className="flex items-center  gap-2 px-2 py-2 text-sm font-extrabold hover:bg-[#003D99] hover:text-white transition w-full justify-start" onClick={handleLogout}>
+        <BiLogOut  size={20} />
+        Logout
+      </button>
+      <hr className="my-1 border-t border-gray-300 w-full" /> 
 
-                  <hr className="my-1 border-t border-gray-300 w-full" />
+      <Link
+        to="/profile"
+        className="flex gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full "
+      >
+        <CgProfile size={18} />
+        My Profile
+      </Link>
 
-                  <Link
-                    to="/profile"
-                    className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
-                  >
-                    <CgProfile size={18} />
-                    My Profile
-                  </Link>
+      <Link
+        to="/myorders"
+        className="flex  gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full"
+      >
+        <GiWallet size={18} />
+        My Orders
+      </Link>
 
-                  <Link
-                    to="/myorders"
-                    className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
-                  >
-                    <GiWallet size={18} />
-                    My Orders
-                  </Link>
+      <Link
+        to="/wallet"
+        className="flex gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full"
+      >
+        <FaBoxOpen size={18} />
+        My Wallet
+      </Link>
+      <Link
+        to="/wallet"
+        className="flex  gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full "
+      >
+        <FiHeart  size={18} />
+        My Favourite
+      </Link>
+     
+    </div>
+  </div>
+)}
 
-                  <Link
-                    to="/wallet"
-                    className="flex items-center gap-2 px-2 py-2 text-sm hover:bg-[#003D99] hover:text-white transition w-full justify-center"
-                  >
-                    <FaBoxOpen size={18} />
-                    My Wallet
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -334,7 +384,10 @@ const Navbar = ({ count = 3 }) => {
         {/* Mobile Top Right Icons: Search, Cart, Location, Menu */}
         <div className="md:hidden flex items-center gap-4">
           {/* Location Icon */}
-          <button onClick={() => setShowMobileLocationModal(true)} className="text-white text-xl focus:outline-none">
+          <button
+            onClick={() => setShowMobileLocationModal(true)}
+            className="text-white text-xl focus:outline-none"
+          >
             <GoLocation />
           </button>
 
@@ -348,52 +401,55 @@ const Navbar = ({ count = 3 }) => {
 
           {/* Cart Icon with badge */}
           <div className="relative">
-    <MdOutlineShoppingCart className="text-white text-2xl" />
-    {count > 0 && (
-      <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
-        {count}
-      </span>
-    )}
-  </div>
-      {/* Menu Icon */}
-      <button
-    className="text-white text-2xl focus:outline-none"
-    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-  >
-    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
-  </button>
-    </div>
-  </nav>
+            <MdOutlineShoppingCart className="text-white text-2xl" />
+            {count > 0 && (
+              <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                {count}
+              </span>
+            )}
+          </div>
+          {/* Menu Icon */}
+          <button
+            className="text-white text-2xl focus:outline-none"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+      </nav>
 
-  {/* Mobile Search Input */}
- 
+      {/* Mobile Search Input */}
 
-{isSearchOpen && (
-  <div className="md:hidden absolute top-16 left-32 w-60 px-4 z-50 ">
-    <div className="flex items-center 
- bg-white text-gray-500 rounded-lg px-4 py-2 w-full max-w-sm mx-auto mt-2"   style={{
-  boxShadow: "0 10px 20px rgba(107, 114, 128, 0.4), 0 -10px 20px rgba(107, 114, 128, 0.4), 10px 0 20px rgba(107, 114, 128, 0.4), -10px 0 20px rgba(107, 114, 128, 0.4)"
-}}>
-      <FaSearch className="mr-2" />
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-        placeholder={animatedText}
-        className="w-full text-sm focus:outline-none focus:ring-0"
-      />
-      {searchTerm && (
-        <button
-          onClick={() => setSearchTerm("")}
-          className="ml-2 focus:outline-none"
-        >
-          <FaTimes className="text-gray-400 hover:text-gray-600 text-lg" />
-        </button>
+      {isSearchOpen && (
+        <div className="md:hidden absolute top-16 left-28 w-80 px-4 z-50 ">
+          <div
+            className="flex items-center 
+ bg-white text-gray-500 rounded-lg px-4 py-2 w-full max-w-sm mx-auto mt-2"
+            style={{
+              boxShadow:
+                "0 10px 20px rgba(107, 114, 128, 0.4), 0 -10px 20px rgba(107, 114, 128, 0.4), 10px 0 20px rgba(107, 114, 128, 0.4), -10px 0 20px rgba(107, 114, 128, 0.4)",
+            }}
+          >
+            <FaSearch className="mr-2" />
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder={`Search for "${animatedText}"`}
+              className="w-full text-sm focus:outline-none focus:ring-0"
+            />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm("")}
+                className="ml-2 focus:outline-none"
+              >
+                <FaTimes className="text-gray-400 hover:text-gray-600 text-lg" />
+              </button>
+            )}
+          </div>
+        </div>
       )}
-    </div>
-  </div>
-)}
-  {isMobileMenuOpen && (
+      {isMobileMenuOpen && (
         <div className="md:hidden fixed top-16 left-0 w-full bg-[#003D99] z-40 px-6 py-4 text-white flex flex-col gap-4 shadow-lg">
           <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>
             Home
@@ -413,62 +469,64 @@ const Navbar = ({ count = 3 }) => {
         </div>
       )}
 
-{showMobileLocationModal && (
-  <div className="fixed top-16 mt-1 right-76 left-4 bg-black bg-opacity-0 z-50 flex justify-center " >
-    <div className="bg-white p-6 rounded-lg w-56 relative" style={{
-  boxShadow: "0 10px 20px rgba(107, 114, 128, 0.4), 0 -10px 20px rgba(107, 114, 128, 0.4), 10px 0 20px rgba(107, 114, 128, 0.4), -10px 0 20px rgba(107, 114, 128, 0.4)"
-}}>
-      <button
-        onClick={() => setShowMobileLocationModal(false)}
-        className="absolute top-1 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold"
-      >
-        ×
-      </button>
-
-      <h2 className="text-base font-semibold mb-4 text-[#013686]">
-        Select Your Location
-      </h2>
-
-      <div className="relative mb-2">
-        <input
-          type="text"
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-          placeholder="Enter your address"
-          className="w-full px-3 py-1 pr-10 border rounded-md text-black"
-        />
-        {address && (
-          <button
-            onClick={() => setAddress("")}
-            className="absolute right-3 top-2 text-gray-400 hover:text-gray-600 text-base"
+      {showMobileLocationModal && (
+        <div className="fixed top-16 mt-1 right-76 left-4 bg-black bg-opacity-0 z-50 flex justify-center ">
+          <div
+            className="bg-white p-6 rounded-lg w-96 relative"
+            style={{
+              boxShadow:
+                "0 10px 20px rgba(107, 114, 128, 0.4), 0 -10px 20px rgba(107, 114, 128, 0.4), 10px 0 20px rgba(107, 114, 128, 0.4), -10px 0 20px rgba(107, 114, 128, 0.4)",
+            }}
           >
-            ×
-          </button>
-        )}
-      </div>
+            <button
+              onClick={() => setShowMobileLocationModal(false)}
+              className="absolute top-1 right-2 text-gray-500 hover:text-gray-800 text-2xl font-bold"
+            >
+              ×
+            </button>
 
-      <div className="text-center my-2 text-gray-400 text-sm">or</div>
+            <h2 className="text-base font-semibold mb-4 text-[#013686]">
+              Select Your Location
+            </h2>
 
-      <button
-        onClick={detectLocation}
-        className="w-full bg-blue-500 text-sm text-white px-3 py-2 rounded-md mb-4"
-      >
-        Detect Current Location
-      </button>
+            <div className="relative mb-2">
+              <input
+                type="text"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                placeholder="Enter your address"
+                className="w-full px-3 py-1 pr-10 border rounded-md text-black"
+              />
+              {address && (
+                <button
+                  onClick={() => setAddress("")}
+                  className="absolute right-3 top-2 text-gray-400 hover:text-gray-600 text-base"
+                >
+                  ×
+                </button>
+              )}
+            </div>
 
-      <button
-        onClick={() => setShowMobileLocationModal(false)}
-        className="w-full bg-green-600  text-sm text-white px-3 py-2 rounded-md"
-      >
-        Add Address
-      </button>
-    </div>
-  </div>
-)}
+            <div className="text-center my-2 text-gray-400 text-sm">or</div>
 
-</>
-);
+            <button
+              onClick={detectLocation}
+              className="w-full bg-blue-500 text-sm text-white px-3 py-2 rounded-md mb-4"
+            >
+              Detect Current Location
+            </button>
 
+            <button
+              onClick={() => setShowMobileLocationModal(false)}
+              className="w-full bg-green-600  text-sm text-white px-3 py-2 rounded-md"
+            >
+              Add Address
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
 };
 
 export default Navbar;

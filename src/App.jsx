@@ -30,6 +30,8 @@ import SignUpPage from "./Pages/SignUpPage";
 import ForgotPasswordScreen from "./Pages/ForgotPasswordScreen";
 import SetPasswordScreen from "./Pages/SetPasswordScreen";
 import MyOrders from "./Pages/MyOrder/MyOrders";
+import FeedbackModal from "./Pages/MyOrder/FeedbackModal";
+import BookingConfirmation from "./Pages/BookingConfimation";
 
 const App = () => {
 
@@ -46,18 +48,25 @@ const App = () => {
      
       {/* <HeroSection /> */}
       {/* <ServiceCard />
-      <ValuesSection /> */}
+      // <ValuesSection /> */}
       <Routes>
-        <Route path="/" element={<HeroSection />} />
+       <Route path="/" element={<HeroSection />} />
         <Route path="/Service" element={<ServicePage />} />
-        <Route path="/myorders" element={<MyOrders />} />
-        <Route path="/login" element={<Login />} />
+         <Route path="/myorders" element={<MyOrders />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
-        <Route path="/reset-password" element={<SetPasswordScreen />} />
-      </Routes>
-      <ScrollToTopButton />
+       <Route path="/login" element={<Login />} />
+       <Route path="/forgot-password" element={<ForgotPasswordScreen />} />
+       <Route path="/reset-password" element={<SetPasswordScreen />} />
+       <Route path="/booking-confirm" element={<BookingConfirmation />} />
 
+     </Routes>
+      <ScrollToTopButton />
+        {/* {open && (
+          <FeedbackModal
+            onSubmit={() => alert("Feedback submitted!")}
+            onCancel={() => setOpen(false)}
+          />
+        )}  */}
       {!shouldHideFooter && <Footer />}
         {/* <Login/> */}
         {/* <MyOrders/> */}

@@ -16,32 +16,40 @@ import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../Common/FireBase.js";
 import { Link } from "react-router-dom";
 import BackgroundDecor from "./BackgroundDecor.jsx";
+import { useDispatch, useSelector } from "react-redux";
+import { loginStart, loginSuccess, loginFailure, logout } from '../Redux/authReducer.js';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const dispatch = useDispatch();
+
   const onSubmit = (values,actions) => {
-     
+    dispatch(loginStart());
     try {
   
       userServices.signin(values)
       .then(res => {
-        // dispatch({type:"REGISTER_SUCCESS"})
+        dispatch(loginSuccess(res));
+        localStorage.setItem('user', JSON.stringify(res)); 
         console.log(res)
         toast.success('signin Successfully')
                 actions.resetForm()
               // navigate("/login")
               
       }).catch(err =>{
+        // dispatch(loginFailure(err.response.data.message));
         console.log(err)
         toast.error(err.response.data.message)
         
       })
      } catch (error) {
+       dispatch(loginFailure(error.message));
       console.log(error)
       toast.error(error.message)
       }
   };
+
 
  const handleGoogle_signin = async () => {
     try {
@@ -86,10 +94,10 @@ const Login = () => {
           onSubmit={handleSubmit}
         >
           <h2 className="mb-1 text-2xl md:text-[33px] font-semibold">Login</h2>
+          {/* <div>{user ? `Hello ${user.data.user.firstName}` : 'Please login'}</div> */}
           <p className="mb-6 text-xs md:text-lg">
             Login to access your travelwise account
           </p>
-
           {/* Email */}
           <div className="relative mb-6">
             <label
