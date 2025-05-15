@@ -23,7 +23,7 @@ const Navbar = ({ count = 3 }) => {
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state) => state.auth);
 
-  let userName = user?.data?.user?.firstName;
+  let userName = user?.user?.firstName;
   userName = userName
     ? userName.charAt(0).toUpperCase() + userName.slice(1)
     : "";
@@ -34,10 +34,13 @@ const Navbar = ({ count = 3 }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // Mobile menu
   const [isSearchOpen, setIsSearchOpen] = useState(false); // Mobile search input toggle
   const [showMobileLocationModal, setShowMobileLocationModal] = useState(false);
+
+
   const handleLogout = () => {
     dispatch(logout());
     localStorage.removeItem('user');
   };
+  
   const detectLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(

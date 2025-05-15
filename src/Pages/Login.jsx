@@ -24,31 +24,30 @@ const Login = () => {
 
   const dispatch = useDispatch();
 
-  const onSubmit = (values,actions) => {
-    dispatch(loginStart());
-    try {
-  
-      userServices.signin(values)
-      .then(res => {
-        dispatch(loginSuccess(res));
-        localStorage.setItem('user', JSON.stringify(res)); 
-        console.log(res)
-        toast.success('signin Successfully')
-                actions.resetForm()
-              // navigate("/login")
-              
-      }).catch(err =>{
-        // dispatch(loginFailure(err.response.data.message));
-        console.log(err)
-        toast.error(err.response.data.message)
-        
-      })
-     } catch (error) {
-       dispatch(loginFailure(error.message));
-      console.log(error)
-      toast.error(error.message)
-      }
-  };
+const onSubmit = (values, actions) => {
+  dispatch(loginStart());
+
+  userServices
+    .signin(values)
+    .then(res => {
+      const userData = res.data;
+
+      dispatch(loginSuccess(userData)); // ✅ only dispatch serializable payload
+
+      // Store only what's needed
+      localStorage.setItem('user', JSON.stringify(userData)); // ✅ no headers or non-serializable data
+
+      console.log(res);
+      toast.success('Signin successfully');
+      actions.resetForm();
+      // navigate("/login");
+    })
+    .catch(err => {
+      dispatch(loginFailure(err.response?.data?.message || "Login failed")); // include fallback
+      console.error(err);
+      toast.error(err.response?.data?.message || "Login failed");
+    });
+};
 
 
  const handleGoogle_signin = async () => {
