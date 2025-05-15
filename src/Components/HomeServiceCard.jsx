@@ -11,7 +11,7 @@ const HomeServiceCard = ({ id,image, title, rating, reviews, price }) => {
 
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-4 w-80 transition-shadow duration-300 hover:shadow-xl">
+    <div className="bg-white rounded-lg shadow-lg p-4 w-[23rem] transition-shadow duration-300 hover:shadow-xl">
       <img src={image} alt={title} className="h-60 w-full object-cover rounded-lg" />
       {/* <div>{id}</div> */}
       <h3 className="mt-2 text-lg font-semibold">{title}</h3>
@@ -25,7 +25,7 @@ const HomeServiceCard = ({ id,image, title, rating, reviews, price }) => {
       </div>
       <div className="flex justify-between items-center mt-2">
         <button
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium"
+          className="px-10 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium"
           onClick={()=>handleBookNow(id)}
         >
 
@@ -40,7 +40,7 @@ const HomeServiceCard = ({ id,image, title, rating, reviews, price }) => {
           {/* Add to Cart */}
           <span className="flex items-center space-x-2">
             <ShoppingCartIcon className="w-5 h-5 stroke-blue-800 fill-white" />
-            <span>Cart</span>
+            <span>Add to Cart</span>
           </span>
         </button>
       </div>

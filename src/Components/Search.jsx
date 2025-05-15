@@ -6,7 +6,7 @@ const Search = ({ searchTerm, onSearchChange }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className="flex items-center ml-16 mt-0 w-full max-w-2xl p-2 border border-blue-100 rounded-full shadow-[0_4px_10px_rgba(0,0,0,0.3)] bg-white">
+    <div className="flex items-center ml-20 mt-0 w-full max-w-2xl p-1 border border-blue-100 rounded-xl shadow-[0_4px_10px_rgba(0,0,0,0.3)] bg-white">
       <FaSearch
         className={`ml-3 transition-all duration-300 transform cursor-pointer ${
           isFocused ? "text-blue-500 scale-125" : "text-gray-400 scale-100"

@@ -110,12 +110,12 @@ const ServiceList = () => {
   return (
     <div className="mt-10">
       <Header />
-      <div className="flex justify-between mt-10">
+      <div className="flex justify-between mt-5">
         <Search searchTerm={searchTerm} onSearchChange={setSearchTerm} />
         <Filters onFilterChange={handleFilterChange} />
       </div>
-      <div className="mt-16 mb-12 px-32">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-0.5 gap-y-16">
+      <div className="mt-12 mb-10 px-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
           {filteredServices.map((service) => (
             <HomeServiceCard key={service.id} {...service} />
           ))}

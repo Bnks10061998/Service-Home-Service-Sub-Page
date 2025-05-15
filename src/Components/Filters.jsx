@@ -34,7 +34,7 @@ const Filters = ({ onFilterChange }) => {
   return (
     <div className="flex gap-5 mt-4 pr-32 justify-end items-center">
       {/* Category Dropdown */}
-      <div className="relative">
+      {/* <div className="relative">
         <FaChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 pointer-events-none" />
         <select
           className="appearance-none pl-8 pr-4 py-3 border bg-blue-100 min-w-[200px] rounded shadow-sm text-base"
@@ -49,9 +49,8 @@ const Filters = ({ onFilterChange }) => {
           <option value="dry_cleaning">Dry Cleaning</option>
           <option value="dyeing_vats">Dyeing Vats</option>
         </select>
-      </div>
+      </div> */}
 
-      {/* Filters Button with Dropdown */}
       <div
         className="relative"
         onMouseEnter={() => setIsDropdownOpen(true)}
@@ -92,9 +91,6 @@ const Filters = ({ onFilterChange }) => {
               ))}
             </div>
 
-            {/* Sort Order Filter */}
-
-            {/* Sort Order Filter using radio buttons */}
 <div className="mb-4">
   <span className="text-gray-700 text-sm mb-2 block font-medium">
     Sort by Name

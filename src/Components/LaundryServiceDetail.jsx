@@ -45,7 +45,7 @@ const LaundryServiceDetail = () => {
   ).toFixed(1);
 
   return (
-    <div className="max-w-6xl mx-auto bg-white mt-20 p-4 rounded-md shadow-md">
+    <div className="max-w-6xl ml-[180px] bg-white mt-20 mb-20 p-4 rounded-md shadow-md">
       {/* Image Section */}
       <div className="relative">
         <img
