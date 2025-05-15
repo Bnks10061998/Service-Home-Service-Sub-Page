@@ -197,7 +197,7 @@ const LaundryServiceDetail = () => {
           {/* Right Column */}
           <div className="md:w-[35%] w-full">
             {activeTab === "details" ? (
-              <div className="bg-white border rounded-lg shadow p-5 space-y-5 sticky top-24">
+              <div className="bg-white border rounded-lg shadow p-5 space-y-5">
                 <div>
                   <h4 className="text-lg font-semibold text-blue-900">
                     Price Summary
@@ -230,7 +230,7 @@ const LaundryServiceDetail = () => {
                 </div>
               </div>
             ) : (
-              <div className="bg-white border rounded-lg shadow p-5 space-y-4 sticky top-24">
+              <div className="bg-white border rounded-lg shadow p-5 space-y-4">
                 <h4 className="text-lg font-bold text-gray-900">
                   Ratings and reviews
                 </h4>
