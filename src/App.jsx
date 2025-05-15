@@ -19,6 +19,7 @@ import BookingConfirmation from "./Pages/BookingConfimation";
 import ServiceList from "./Components/ServiceList";
 import CartPage from "./Components/CartPage";
 import LaundryServiceDetail from "./Components/LaundryServiceDetail";
+import Addcard from "./Add card/Addcard"
 
 const App = () => {
   const [filters, setFilters] = useState({
@@ -33,7 +34,7 @@ const App = () => {
 
   const location = useLocation();
 
-  // Define paths where footer should not appear
+ 
   const hideFooterPaths = ["/login", "/signup", "/forgot-password", "/reset-password"];
   const shouldHideFooter = hideFooterPaths.includes(location.pathname);
 
@@ -42,9 +43,7 @@ const App = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
      
-      {/* <HeroSection /> */}
-      {/* <ServiceCard />
-      // <ValuesSection /> */}
+  
       <Routes>
        <Route path="/" element={<HeroSection />} />
         <Route path="/Service" element={<ServicePage />} />
@@ -55,20 +54,14 @@ const App = () => {
         <Route path="/reset-password" element={<SetPasswordScreen />} />
         <Route path="/booking-confirmation" element={<BookingConfirmation />} />
         <Route path="/laundry-details/:id" element={<LaundryServiceDetail />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route path="/cart" element={<Addcard />} />
         <Route path="/serviceList" element={<ServiceList/>} filters={filters} />
         
       </Routes>
       <ScrollToTopButton />
-        {/* {open && (
-          <FeedbackModal
-            onSubmit={() => alert("Feedback submitted!")}
-            onCancel={() => setOpen(false)}
-          />
-        )}  */}
+      
       {!shouldHideFooter && <Footer />}
-        {/* <Login/> */}
-        {/* <MyOrders/> */}
+      
     </div>
 
  

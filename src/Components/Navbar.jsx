@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BiLogOut  } from "react-icons/bi";
 import { logout } from "../Redux/authReducer";
 
-const Navbar = ({ count = 3 }) => {
+const Navbar = ({ count = 1 }) => {
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state) => state.auth);
 
@@ -273,8 +273,8 @@ const Navbar = ({ count = 3 }) => {
           {/* Cart & Login */}
           <div className="flex items-center gap-10 text-white font-medium text-lg">
             <div className="group relative w-12 h-12 flex items-center justify-center rounded-full transition duration-300 cursor-pointer hover:bg-white hover:shadow-md">
-              {/* Cart Icon */}
-              <MdOutlineShoppingCart className="text-white group-hover:text-[#013686] text-3xl transition" />
+              {/* Cart Icon */}<Link to="/cart">
+              <MdOutlineShoppingCart className="text-white group-hover:text-[#013686] text-3xl transition" /></Link>
 
               {/* Red Badge */}
               {count > 0 && (
