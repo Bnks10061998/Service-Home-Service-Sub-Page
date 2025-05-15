@@ -198,37 +198,60 @@ const LaundryServiceDetail = () => {
           <div className="md:w-[35%] w-full">
             {activeTab === "details" ? (
               <div className="bg-white border rounded-lg shadow p-5 space-y-5">
-                <div>
-                  <h4 className="text-lg font-semibold text-blue-900">
-                    Price Summary
-                  </h4>
-                  <p className="text-gray-700 mt-1">
-                    Starting at{" "}
-                    <span className="font-bold text-green-600">₹199</span>
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-blue-900">
-                    Current Offer
-                  </h4>
-                  <p className="text-sm text-green-700">
-                    ✔ 10% OFF on first order
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    Use code:{" "}
-                    <span className="font-mono text-blue-700">WELCOME10</span>
-                  </p>
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-blue-900">
-                    Service Hours
-                  </h4>
-                  <p className="text-sm text-gray-700">
-                    Mon–Sat: 9:00 AM – 7:00 PM
-                  </p>
-                  <p className="text-sm text-gray-700">Sun: Closed</p>
-                </div>
-              </div>
+<div>
+    <h4 className="text-lg font-semibold text-blue-900">Pickup & Delivery</h4>
+    <p className="text-sm text-gray-700">
+      Free pickup & delivery available within city limits
+    </p>
+  </div>
+  
+  <div>
+    <h4 className="text-lg font-semibold text-blue-900">Features</h4>
+    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+      <li>Eco-friendly detergents</li>
+      <li>Premium fabric care</li>
+    </ul>
+  </div>
+  
+  <div>
+    <h4 className="text-lg font-semibold text-blue-900">Service Hours</h4>
+    <p className="text-sm text-gray-700">Mon–Sat: 8:00 AM – 9:00 PM</p>
+    <p className="text-sm text-gray-700">Sun: 9:00 AM – 5:00 PM</p>
+  </div>
+</div>
+
+              // <div className="bg-white border rounded-lg shadow p-5 space-y-5">
+              //   <div>
+              //     <h4 className="text-lg font-semibold text-blue-900">
+              //       Price Summary
+              //     </h4>
+              //     <p className="text-gray-700 mt-1">
+              //       Starting at{" "}
+              //       <span className="font-bold text-green-600">₹199</span>
+              //     </p>
+              //   </div>
+              //   <div>
+              //     <h4 className="text-lg font-semibold text-blue-900">
+              //       Current Offer
+              //     </h4>
+              //     <p className="text-sm text-green-700">
+              //       ✔ 10% OFF on first order
+              //     </p>
+              //     <p className="text-xs text-gray-500">
+              //       Use code:{" "}
+              //       <span className="font-mono text-blue-700">WELCOME10</span>
+              //     </p>
+              //   </div>
+              //   <div>
+              //     <h4 className="text-lg font-semibold text-blue-900">
+              //       Service Hours
+              //     </h4>
+              //     <p className="text-sm text-gray-700">
+              //       Mon–Sat: 9:00 AM – 7:00 PM
+              //     </p>
+              //     <p className="text-sm text-gray-700">Sun: Closed</p>
+              //   </div>
+              // </div>
             ) : (
               <div className="bg-white border rounded-lg shadow p-5 space-y-4">
                 <h4 className="text-lg font-bold text-gray-900">
