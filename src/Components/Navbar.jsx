@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BiLogOut  } from "react-icons/bi";
 import { logout } from "../Redux/authReducer";
 
-const Navbar = ({ count = 1 }) => {
+const Navbar = () => {
   const dispatch = useDispatch();
   const { user, loading, error } = useSelector((state) => state.auth);
 
@@ -35,7 +35,11 @@ const Navbar = ({ count = 1 }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false); // Mobile search input toggle
   const [showMobileLocationModal, setShowMobileLocationModal] = useState(false);
 
+ const totalQuantity = useSelector((state) => state.cart.totalQuantity);
 
+
+//  console.log(totalQuantity);
+ 
   const handleLogout = () => {
     dispatch(logout());
     localStorage.removeItem('user');
@@ -277,9 +281,9 @@ const Navbar = ({ count = 1 }) => {
               <MdOutlineShoppingCart className="text-white group-hover:text-[#013686] text-3xl transition" /></Link>
 
               {/* Red Badge */}
-              {count > 0 && (
+              {totalQuantity > 0 && (
                 <span className="absolute top-1 right-1 bg-red-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
-                  {count}
+                  {totalQuantity}
                 </span>
               )}
             </div>
@@ -405,9 +409,9 @@ const Navbar = ({ count = 1 }) => {
           {/* Cart Icon with badge */}
           <div className="relative">
             <MdOutlineShoppingCart className="text-white text-2xl" />
-            {count > 0 && (
+            {totalQuantity > 0 && (
               <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
-                {count}
+                {totalQuantity}
               </span>
             )}
           </div>

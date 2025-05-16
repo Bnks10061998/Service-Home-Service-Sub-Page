@@ -1,14 +1,26 @@
 import { React, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/cartSlice";
 
-const HomeServiceCard = ({ id,image, title, rating, reviews, price }) => {
+// { id,image, title, rating, reviews, price ,handleAddToCart}
+const HomeServiceCard = ({service}) => {
+// console.log(service);
+const { title, rating, reviews, image } = service;
+
+  const dispatch = useDispatch()
   const navigate = useNavigate();
 
   const handleBookNow = (id) => {
     navigate(`/laundry-details/${id}`, { state: { title, rating,reviews } });
   };
 
+    const handleAddToCart = (service) => {
+    dispatch(addToCart(service));
+    console.log(service);
+    
+  };
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 w-[23rem] transition-shadow duration-300 hover:shadow-xl">
@@ -33,9 +45,10 @@ const HomeServiceCard = ({ id,image, title, rating, reviews, price }) => {
         </button>
         <button
           className="px-4 py-2 bg-blue-0 text-blue-700 border border-blue-700 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-200"
-          onClick={() =>
-            navigate("/cart", { state: { service: title } })
-          }
+         onClick={() => handleAddToCart(service)}
+            // () =>
+            // navigate("/cart", { state: { service: title } })
+          // }
         >
           {/* Add to Cart */}
           <span className="flex items-center space-x-2">

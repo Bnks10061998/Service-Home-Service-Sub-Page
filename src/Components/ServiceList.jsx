@@ -9,6 +9,8 @@ import carpet from "../assets/carpet.jpg";
 import Steam from "../assets/steam1.jpg";
 import Filters from "./Filters";
 import Header from "./Header";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/cartSlice";
 
 const services = [
   {
@@ -17,6 +19,7 @@ const services = [
     image: fold,
     rating: "3.8",
     reviews: "210",
+    price:"128.78"
   },
   {
     id: "002",
@@ -24,6 +27,7 @@ const services = [
     image: iron,
     rating: "3.2",
     reviews: "600",
+    price:"128.78"
   },
   {
     id: "003",
@@ -31,6 +35,7 @@ const services = [
     image: dry,
     rating: "4.2",
     reviews: "467",
+     price:"128.78"
   },
   {
     id: "004",
@@ -38,6 +43,7 @@ const services = [
     image: carpet,
     rating: "4.5",
     reviews: "752",
+     price:"128.78"
   },
   {
     id: "005",
@@ -45,6 +51,7 @@ const services = [
     image: Steam,
     rating: "5",
     reviews: "226",
+     price:"128.78"
   },
   {
     id: "006",
@@ -52,8 +59,11 @@ const services = [
     image: Wash,
     rating: "4.8",
     reviews: "267",
+     price:"128.78"
   },
 ];
+
+
 
 const ratingRanges = {
   5: [4.6, 5],
@@ -63,6 +73,13 @@ const ratingRanges = {
 };
 
 const ServiceList = () => {
+
+const dispatch = useDispatch();
+
+const handleAddToCart = (service) => {
+  dispatch(addToCart(service)); // full object sent to Redux store
+};
+
   const [filters, setFilters] = useState({
     sortOrder: "",
     selectedCategory: "all",
@@ -117,7 +134,7 @@ const ServiceList = () => {
       <div className="mt-12 mb-10 px-32">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16">
           {filteredServices.map((service) => (
-            <HomeServiceCard key={service.id} {...service} />
+            <HomeServiceCard key={service.id}  service={service}  handleAddToCart={handleAddToCart} />
           ))}
         </div>
       </div>
