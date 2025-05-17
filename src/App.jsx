@@ -1,13 +1,9 @@
 import { React, useState } from "react";
 import { Routes, Route,useLocation  } from "react-router-dom";
-//import Services from "./Pages/Services"; // Import your Services component
-//import ACRepair from "./Pages/ACRepari"; // Import other pages you're routing to
 import Navbar from "./Components/Navbar";
-import HeroSection from "./Pages/HeroSection"; // Import HeroSection component
+import HeroSection from "./Pages/HeroSection";
 import Footer from "./Components/Footer";
 import ScrollToTopButton from "./Components/ScrollToTopButton";
-// import ServiceCard from './Components/ServiceCard';
-// import ValuesSection from "./Components/ValuesSection";
 import ServicePage from "./Components/ServicePage";
 import Login from "./Pages/Login";
 import SignUpPage from "./Pages/SignUpPage";
@@ -15,11 +11,12 @@ import ForgotPasswordScreen from "./Pages/ForgotPasswordScreen";
 import SetPasswordScreen from "./Pages/SetPasswordScreen";
 import MyOrders from "./Pages/MyOrder/MyOrders";
 import BookingConfirmation from "./Pages/BookingConfimation";
-
 import ServiceList from "./Components/ServiceList";
-import CartPage from "./Components/CartPage";
+// import CartPage from "./Components/CartPage";
 import LaundryServiceDetail from "./Components/LaundryServiceDetail";
 import Addcard from "./Add card/Addcard"
+import FeedbackForm from './Components/FeedbackForm';
+import NotFoundPage from './Components/NotFoundPage';
 
 const App = () => {
   const [filters, setFilters] = useState({
@@ -56,6 +53,8 @@ const App = () => {
         <Route path="/laundry-details/:id" element={<LaundryServiceDetail />} />
         <Route path="/cart" element={<Addcard />} />
         <Route path="/serviceList" element={<ServiceList/>} filters={filters} />
+        <Route path="/feedback" element={<FeedbackForm />} />
+        <Route path="*" element={<NotFoundPage />} />
         
       </Routes>
       <ScrollToTopButton />

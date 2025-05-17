@@ -1,9 +1,11 @@
 // OrderCard.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 
 
 const OrderCard = ({ order }) => {
+   const navigate = useNavigate();
   const renderButtons = () => {
     switch (order.status) {
      
@@ -22,7 +24,9 @@ const OrderCard = ({ order }) => {
             <button className="myOrder_btn ">
               Book Again
             </button>
-            <button className="flex-1 bg-[#515def] text-white text-sm py-2 rounded-xl hover:bg-[#013686]">
+            <button className="flex-1 bg-[#515def] text-white text-sm py-2 rounded-xl hover:bg-[#013686]"
+            onClick={() => navigate("/feedback")}
+            >
               Leave a Comment
             </button>
           </>
