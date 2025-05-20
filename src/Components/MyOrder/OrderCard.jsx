@@ -1,32 +1,9 @@
-
-import React, { useState } from "react";
+// OrderCard.jsx
+import React from "react";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 
 
 const OrderCard = ({ order }) => {
-
-  const [showTracking, setShowTracking] = useState(false);
-
-  const stepLabels = [
-  "Order Confirmed",
-  "In Progress",
-  "Scheduled",
-  "On the Way",
-  "Completed",
-];
-
-const steps = stepLabels.map((label) => ({
-  label,
-  date: order.trackingDates?.[label] || "-",
-}));
-
-
-
-
-const toggleTracking = () => {
-  setShowTracking((prev) => !prev);
-};
-
   const renderButtons = () => {
     switch (order.status) {
      
@@ -44,7 +21,9 @@ const toggleTracking = () => {
             <button className="myOrder_btn ">
               Book Again
             </button>
-            <button className="flex-1 bg-[#515def] text-white text-sm py-2 rounded-xl hover:bg-[#013686]">
+            <button className="flex-1 bg-[#515def] text-white text-sm py-2 rounded-xl hover:bg-[#013686]"
+            onClick={() => navigate("/feedback")}
+            >
               Leave a Comment
             </button>
           </>

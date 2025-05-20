@@ -47,7 +47,7 @@ const services = [
     title: "Laundry Services",
     desc: "Quick and professional laundry services right at your doorstep.",
     image: serviceman1,
-    link: "/laundry",
+    link: "/serviceList",
     icon: logo1,
   },
   {

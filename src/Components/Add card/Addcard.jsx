@@ -10,6 +10,7 @@ import {
   removeFromCart,
 } from "../../Redux/cartSlice";
 
+
 function Addcard() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -115,7 +116,7 @@ function Addcard() {
           </div>
 
           {/* Right Section */}
-          <div className="w-full lg:w-96 bg-blue-50 p-4 sm:p-6 rounded-lg shadow-md">
+          <div className="w-full lg:w-96 bg-blue-50 p-4 sm:p-6 rounded-lg shadow-md max-h-[300px]">
             <p className="text-sm text-gray-500 mb-3 sm:mb-4">
               Free delivery + saving ₹3.00 on this order
               <span className="text-blue-500 cursor-pointer ml-1">Go to</span>
