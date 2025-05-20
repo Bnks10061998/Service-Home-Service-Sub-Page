@@ -17,6 +17,7 @@ const LaundryServiceDetail = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const passedTitle = location.state?.title || "Premium Wash & Fold Service";
+  const passedImage = location.state?.image || laundryImage;
   const passedRating = location.state?.rating || "4.5";
   const passedReviews = location.state?.reviews || "200";
 
@@ -47,13 +48,13 @@ const LaundryServiceDetail = () => {
   ).toFixed(1);
 
   return (
-    <div className="max-w-6xl ml-[180px] bg-white mt-20 mb-20 p-4 rounded-md shadow-md">
+    <div className="max-w-6xl ml-[180px] bg-white mt-10 mb-20 p-4 rounded-md shadow-md">
       {/* Image Section */}
       <div className="relative">
         <img
-          src={laundryImage}
+          src={passedImage}
           alt="Laundry"
-          className="w-full h-[500px] object-cover rounded-md"
+          className="w-full h-[550px] object- rounded-md"
         />
         <div className="absolute top-8 right-8 flex gap-2">
           <button

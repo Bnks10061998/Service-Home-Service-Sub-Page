@@ -13,7 +13,7 @@ const { title, rating, reviews, image,id } = service;
   const navigate = useNavigate();
 
   const handleBookNow = (id) => {
-    navigate(`/laundry-details/${id}`, { state: { title, rating,reviews } });
+    navigate(`/laundry-details/${id}`, { state: { title, rating,reviews,image } });
   };
 
     const handleAddToCart = (service) => {

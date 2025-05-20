@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
-import laundry from "../../assets/webp/laundry1.webp";
+import laundry from "../../assets/webp/laundry.webp";
 import Lottie from "lottie-react";
 import successAnimation from "../MyOrder/tick1.json";
 
