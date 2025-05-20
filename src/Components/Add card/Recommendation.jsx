@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
+import image from "../../assets/webp/image2.webp";
+import IRon from "../../assets/webp/iron.webp";
+import ac from "../../assets/webp/ac.webp";
+import Bathroom from "../../assets/webp/bothroom.webp";
+import Rental from "../../assets/webp/rental.webp";
 
-import image from "../../assets/addcard/image2.png";
-import IRon from "../../assets/addcard/iron.png";
-import ac from "../../assets/addcard/ac.png";
-import Bathroom from "../../assets/addcard/bothroom.png";
-import Rental from "../../assets/addcard/rental.png";
 
 const services = [
   { image: IRon, title: "Dry Clean Service", rate: 80, price: 128.78 },

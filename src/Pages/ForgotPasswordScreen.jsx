@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { FiChevronLeft } from "react-icons/fi";
-import fypImg from "../assets/fypImg.png";
-import bgImage from "../assets/bgImg.png";
-import EllipseRight from "../assets/EllipseRight.png";
+import fypImg from "../assets/webp/fypImg.webp";
 import { useFormik } from "formik";
 import { forgot_password } from "../Pages/loginSchema/Schema";
 import { toast } from 'react-toastify';

@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import {
-  FiChevronLeft,
   FiEye,
   FiEyeOff,
 } from "react-icons/fi";
-import VerifyImg from "../assets/VerifyImg.png";
-import bgImage from "../assets/bgImg.png";
-import EllipseRight from "../assets/EllipseRight.png";
+import VerifyImg from "../assets/webp/VerifyImg.webp";
 import { useFormik } from "formik";
 import { reset_password } from "../Pages/loginSchema/Schema";
 import BackgroundDecor from "./BackgroundDecor";

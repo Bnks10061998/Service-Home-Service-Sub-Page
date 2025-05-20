@@ -1,16 +1,17 @@
+
 import React from "react";
-import { MdChevronRight  } from "react-icons/md";
+import { MdChevronRight } from "react-icons/md";
 import { motion } from "framer-motion";
-import logo1 from "../../assets/Service/E-Seva1.png";
-import logo2 from "../../assets/Service/LaundryRound1.png";
-import logo5 from "../../assets/Service/HomeRepair4.jpg";
-import logo7 from "../../assets/Service/MedicalRound1.jpg";
-import logo3 from "../../assets/Service/Food2.jpg";
-import logo9 from "../../assets/Service/EventRound1.jpg";
-import logo4 from "../../assets/Service/RentalRound1.png";
-import logo6 from "../../assets/Service/WasteManagementRound.jpg";
-import logo8 from "../../assets/Service/PersonalCareRound.jpg";
-import "./styles.css"; 
+import logo1 from "../../assets/webp/E-Seva1.webp";
+import logo2 from "../../assets/webp/LaundryRound1.webp";
+import logo5 from "../../assets/webp/HomeRepair4.webp";
+import logo7 from "../../assets/webp/MedicalRound1.webp";
+import logo3 from "../../assets/webp/Food2.webp";
+import logo9 from "../../assets/webp/EventRound1.webp";
+import logo4 from "../../assets/webp/RentalRound1.webp";
+import logo6 from "../../assets/webp/WasteManagementRound.webp";
+import logo8 from "../../assets/webp/PersonalCareRound.webp";
+import "./styles.css";
 
 
 const services = [

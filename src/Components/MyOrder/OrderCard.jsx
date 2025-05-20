@@ -1,9 +1,27 @@
 // OrderCard.jsx
-import React from "react";
+import React, { useState } from "react";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 
 const OrderCard = ({ order }) => {
+
+ const [showTracking, setShowTracking] = useState(false);
+
+  const toggleTracking = () => {
+    setShowTracking(prev => !prev);
+  };
+
+const steps = [
+  { label: "Order Placed", date: "May 18" },
+  { label: "Picked Up", date: "May 18" },
+  { label: "Processing", date: "May 19" },
+  { label: "Out for Delivery", date: "May 20" },
+  { label: "Delivered", date: "May 20" },
+];
+
+const navigate = useNavigate();
+
   const renderButtons = () => {
     switch (order.status) {
      

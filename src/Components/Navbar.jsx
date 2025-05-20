@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FaSearch, FaTimes, FaBars } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { GoLocation } from "react-icons/go";
-import image from "../assets/servy.png";
+import image from "../assets/webp/servy.webp";
 import { Link } from "react-router-dom";
 import {
   FiUserPlus,

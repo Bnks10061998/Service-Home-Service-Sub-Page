@@ -1,14 +1,12 @@
 import {
   FaFacebookF,
   FaInstagram,
-  FaTwitter,
   FaLinkedinIn,
   FaYoutube,
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
-import React from "react";
-import { Link } from "react-router-dom"; // If using React Router
-import logo from "../assets/servy.png";
+import { Link } from "react-router-dom"; 
+import logo from "../assets/webp/servy.webp";
 
 export default function Footer() {
   return (

@@ -2,45 +2,46 @@ import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import HTMLFlipBook from "react-pageflip";
 
-import serviceman1 from "../assets/serviceman1.jpg";
-import serviceman2 from "../assets/serviceman2.jpg";
-import serviceman3 from "../assets/serviceman3.jpg";
-import serviceman4 from "../assets/serviceman4.jpg";
-import serviceman5 from "../assets/serviceman5.jpg";
-import serviceman6 from "../assets/serviceman6.jpg";
-import serviceman7 from "../assets/serviceman7.jpg";
-import serviceman8 from "../assets/serviceman8.jpg";
-import serviceman9 from "../assets/serviceman9.jpg";
+import serviceman1 from "../assets/webp/serviceman1.webp";
+import serviceman2 from "../assets/webp/serviceman2.webp";
+import serviceman3 from "../assets/webp/serviceman3.webp";
+import serviceman4 from "../assets/webp/serviceman4.webp";
+import serviceman5 from "../assets/webp/serviceman5.webp";
+import serviceman6 from "../assets/webp/serviceman6.webp";
+import serviceman7 from "../assets/webp/serviceman7.webp";
+import serviceman8 from "../assets/webp/serviceman8.webp";
+import serviceman9 from "../assets/webp/serviceman9.webp";
 
 // import two from "../assets/two.jpg";
-import twice from "../assets/twice.jpg";
-import team from "../assets/teamwork.png";
-import money from "../assets/dollar.png";
+import twice from "../assets/webp/twice.webp";
+import team from "../assets/webp/teamwork.webp";
+import money from "../assets/webp/dollar.webp";
 
 import { MdArrowOutward } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 
-import logo1 from "../assets/logo1.jpg";
-import logo2 from "../assets/logo2.jpg";
-import logo3 from "../assets/logo3.jpg";
-import logo4 from "../assets/logo4.jpg";
-import logo5 from "../assets/logo5.jpg";
-import logo6 from "../assets/logo6.jpg";
-import logo7 from "../assets/logo7.jpg";
-import logo8 from "../assets/logo8.jpg";
-import logo9 from "../assets/logo9.jpg";
+import logo1 from "../assets/webp/logo1.webp";
+import logo2 from "../assets/webp/logo2.webp";
+import logo3 from "../assets/webp/logo3.webp";
+import logo4 from "../assets/webp/logo4.webp";
+import logo5 from "../assets/webp/logo5.webp";
+import logo6 from "../assets/webp/logo6.webp";
+import logo7 from "../assets/webp/logo7.webp";
+import logo8 from "../assets/webp/logo8.webp";
+import logo9 from "../assets/webp/logo9.webp";
 
-import archBackground from "../assets/arc.png";
-import twos from "../assets/twos.png";
-import bg from "../assets/bg.jpg";
-import lap1 from "../assets/lap1.jpg";
-import lap2 from "../assets/lap2.jpg";
-import lap3 from "../assets/lap3.jpg";
+import archBackground from "../assets/webp/arc.webp";
+import twos from "../assets/webp/twos.webp";
+import bg from "../assets/webp/bg.webp";
+import lap1 from "../assets/webp/lap1.webp";
+import lap2 from "../assets/webp/lap2.webp";
+import lap3 from "../assets/webp/lap3.webp";
 
 import { IoCall } from "react-icons/io5";
 import { CiMail } from "react-icons/ci";
-import bgImage from "../assets/bg.png";
-import bgImage1 from "../assets/anotherbg.png";
+import bgImage from "../assets/webp/bg.webp";
+import bgImage1 from "../assets/webp/anotherbg.webp";
+
 
 const services = [
   {

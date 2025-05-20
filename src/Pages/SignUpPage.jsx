@@ -3,10 +3,7 @@ import {
   FiEye,
   FiEyeOff,
 } from "react-icons/fi";
-import { FaFacebookF, FaGoogle, FaApple } from "react-icons/fa";
-import signupImg from "../assets/signupImg.png";
-import bgImage from "../assets/bgImg.png";
-import EllipseRight from "../assets/EllipseRight.png";
+import signupImg from "../assets/webp/signupImg.webp";
 import { useFormik } from "formik";
 import { registerSchema } from "../Pages/loginSchema/Schema";
 import { userServices } from "../Instance/userServices.js";

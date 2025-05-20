@@ -3,7 +3,7 @@ import { FiEye, FiEyeOff } from "react-icons/fi";
 import { FaFacebookF, FaGoogle, FaApple } from "react-icons/fa";
 import { RiAppleLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
-import loginImg from "../assets/loginImg.png";
+import loginImg from "../assets/webp/loginImg.webp";
 import { useFormik } from "formik";
 import { loginSchema } from "../Pages/loginSchema/Schema";
 import { userServices } from "../Instance/userServices.js";

@@ -1,6 +1,6 @@
 import React from "react";
-import bgImage from "../assets/bgImg.png";
-import EllipseRight from "../assets/EllipseRight.png";
+import bgImage from "../assets/webp/bgImg.webp";
+import EllipseRight from "../assets/webp/EllipseRight.webp";
 
 const BackgroundDecor = () => {
   return (
