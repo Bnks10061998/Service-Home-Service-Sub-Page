@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import OrderCard from "./OrderCard";
-import laundry from "../../assets/webp/laundry.webp"
+import laundry from "../../assets/webp/Laundry.webp"
 
 const orders = [
   {
