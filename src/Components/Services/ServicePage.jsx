@@ -1,5 +1,5 @@
 import React from 'react'
-import ValuesSection from './ValuesSection'
+import ValuesSection from '../ValuesSection'
 import ServiceCard from './ServiceCard'
 
 const ServicePage = () => {

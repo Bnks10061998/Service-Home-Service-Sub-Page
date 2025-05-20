@@ -6,9 +6,9 @@ import {
   FaShareAlt,
 } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
-import laundryImage from "../assets/LaundryImage.jpg";
+import laundryImage from "../../assets/LaundryImage.jpg";
 import { Heart } from "lucide-react";
-import coinImage from "../assets/S Coins.jpg";
+import coinImage from "../../assets/S Coins.jpg";
 import { motion, AnimatePresence } from "framer-motion";
 
 const LaundryServiceDetail = () => {

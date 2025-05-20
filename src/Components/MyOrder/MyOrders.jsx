@@ -16,6 +16,14 @@ const orders = [
     duration: "3 hours",
     address: "Entered Address",
     amount: 134.56,
+     currentStep: 3,
+      trackingDates: {
+    "Order Confirmed": "Wed, 20 May",
+    "In Progress": "Wed, 20 May",
+    "Scheduled": "Thu, 21 May",
+    "On the Way": "Sat, 24 May",
+    "Completed": "Sat, 24 May",
+  },
   },
   {
     id: 2,
@@ -28,6 +36,7 @@ const orders = [
     duration: "3 hours",
     address: "Entered Address",
     amount: 134.56,
+     currentStep: 2
   },
   {
     id: 3,
@@ -40,6 +49,7 @@ const orders = [
     duration: "3 hours",
     address: "Entered Address",
     amount: 134.56,
+     currentStep: 2
   },
   {
     id: 4,
@@ -52,6 +62,7 @@ const orders = [
     duration: "3 hours",
     address: "Entered Address",
     amount: 134.56,
+     currentStep: 3
   },
 ];
 

@@ -2,12 +2,12 @@ import { React, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Redux/cartSlice";
+import { addToCart } from "../../Redux/cartSlice";
 
 // { id,image, title, rating, reviews, price ,handleAddToCart}
 const HomeServiceCard = ({service}) => {
 // console.log(service);
-const { title, rating, reviews, image } = service;
+const { title, rating, reviews, image,id } = service;
 
   const dispatch = useDispatch()
   const navigate = useNavigate();
@@ -25,7 +25,6 @@ const { title, rating, reviews, image } = service;
   return (
     <div className="bg-white rounded-lg shadow-lg p-4 w-[23rem] transition-shadow duration-300 hover:shadow-xl">
       <img src={image} alt={title} className="h-60 w-full object-cover rounded-lg" />
-      {/* <div>{id}</div> */}
       <h3 className="mt-2 text-lg font-semibold">{title}</h3>
       <p className="text-gray-500 text-sm">Clean Pro Services</p>
       <div className="flex justify-between items-center mt-2 text-sm">

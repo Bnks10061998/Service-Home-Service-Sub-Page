@@ -1,19 +1,41 @@
-// OrderCard.jsx
-import React from "react";
+
+import React, { useState } from "react";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
 
 
 const OrderCard = ({ order }) => {
+
+  const [showTracking, setShowTracking] = useState(false);
+
+  const stepLabels = [
+  "Order Confirmed",
+  "In Progress",
+  "Scheduled",
+  "On the Way",
+  "Completed",
+];
+
+const steps = stepLabels.map((label) => ({
+  label,
+  date: order.trackingDates?.[label] || "-",
+}));
+
+
+
+
+const toggleTracking = () => {
+  setShowTracking((prev) => !prev);
+};
+
   const renderButtons = () => {
     switch (order.status) {
      
       case "On Progress":
         return (
           <>
-            <button className="myOrder_btn">
-              Track Order
-            </button>
-           
+          <button className="myOrder_btn" onClick={toggleTracking}>
+  {showTracking ? "Hide Tracking" : "Track Order"}
+</button>
           </>
         );
       case "Delivered":
@@ -98,12 +120,69 @@ const OrderCard = ({ order }) => {
           <p className="text-sm font-semibold">₹{order.amount}</p>
         </div>
 
-        <div className="mt-3 flex gap-3">
-        {renderButtons()}
+       <div className="mt-4 flex gap-3">
+  {renderButtons()}
+</div>
+<div
+  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+    showTracking ? "max-h-40 mt-4 p-4 border" : "max-h-0  mt-4 "
+  } bg-gray-50 rounded-xl `}
+>
+{showTracking && (
+  <div className="mt-4 p-4 bg-gray-50 rounded-xl border">
+    <div className="relative flex items-center justify-between w-full">
+      {/* Base Gray Line */}
+      <div className="absolute top-[34px] left-24 w-[80%] h-2 bg-gray-300 z-0 rounded-full"></div>
+
+      {/* Progress Bar Line */}
+      <div
+        className="absolute top-[34px] left-24 h-2 bg-[#013686] z-10 rounded-full transition-all duration-300"
+        style={{
+  width: `${order.currentStep === 4 ? order.currentStep * 20 : (order.currentStep / (steps.length - 1)) * 100}%`,
+}}
+
+      ></div>
+
+      {/* Steps */}
+      {steps.map((step, index) => {
+       const isCompleted = index <= order.currentStep;
+
+
+        return (
+          <div
+            key={index}
+            className="relative z-20 flex flex-col items-center text-center w-1/5"
+          >
+            <span
+              className={`text-sm font-medium mb-2 ${
+                isCompleted ? "text-[#013686]" : "text-gray-500"
+              }`}
+            >
+              {step.label}
+            </span>
+
+            <div
+              className={`w-5 h-5 rounded-full border-4 ${
+                isCompleted
+                  ? "bg-[#013686] border-[#013686]"
+                  : "bg-gray-400 border-gray-400"
+              }`}
+            ></div>
+
+            <span className="mt-2 text-xs text-gray-500">{step.date}</span>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+)}
+
+
+</div>
+
         </div>
       </div>
     </div>
-  </div>
 );
 };
 export default OrderCard;

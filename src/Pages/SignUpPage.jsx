@@ -81,7 +81,7 @@ const SignUpPage = () => {
         <form
           onSubmit={handleSubmit}
           className={`md:w-full px-2 md:px-0 pt-20 md:pt-0 bg-transparent mt-52 ${
-            errorCount > 4 ? " md:mt-46" : " md:mt-52"
+            errorCount > 4 ? " md:mt-46" : " md:mt-60"
           }`}
         >
           <h2 className="mb-1 text-2xl md:text-[33px] font-semibold md:text-left">
@@ -268,7 +268,7 @@ const SignUpPage = () => {
           </p>
 
           {/* Social Signup */}
-          <div className="flex items-center my-5">
+          {/* <div className="flex items-center my-5">
             <hr className="flex-grow border-gray-300" />
             <span className="mx-2 text-xs md:text-sm text-gray-500">
               Or Sign up with
@@ -290,7 +290,7 @@ const SignUpPage = () => {
                               <div className="absolute bottom-0 left-0 w-full h-0 bg-gray-800 transition-all duration-500 group-hover:h-full z-0" />
                               <FaApple className="h-5 w-5 text-gray-800 fa-icon group-hover:text-white group-hover:rotate-y-360 transition-all duration-500 relative z-10" />
                             </div>
-                          </div>
+                          </div> */}
         </form>
       </div>
     </div>

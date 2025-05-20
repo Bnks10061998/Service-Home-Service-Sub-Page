@@ -1,7 +1,7 @@
 import Lottie from "lottie-react";
 import React from "react";
 import { FaCalendarAlt, FaClock, FaMapMarkerAlt } from "react-icons/fa";
-import successAnimation from "./MyOrder/tick1.json";
+import successAnimation from "../Components/MyOrder/tick1.json";
 import { Link } from "react-router-dom";
 
 const BookingConfirmation = () => {

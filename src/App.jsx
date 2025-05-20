@@ -8,18 +8,17 @@ import Footer from "./Components/Footer";
 import ScrollToTopButton from "./Components/ScrollToTopButton";
 // import ServiceCard from './Components/ServiceCard';
 // import ValuesSection from "./Components/ValuesSection";
-import ServicePage from "./Components/ServicePage";
+import ServicePage from "./Components/Services/ServicePage";
 import Login from "./Pages/Login";
 import SignUpPage from "./Pages/SignUpPage";
 import ForgotPasswordScreen from "./Pages/ForgotPasswordScreen";
 import SetPasswordScreen from "./Pages/SetPasswordScreen";
-import MyOrders from "./Pages/MyOrder/MyOrders";
+import MyOrders from "./Components/MyOrder/MyOrders";
 import BookingConfirmation from "./Pages/BookingConfimation";
 
-import ServiceList from "./Components/ServiceList";
-import CartPage from "./Components/CartPage";
-import LaundryServiceDetail from "./Components/LaundryServiceDetail";
-import Addcard from "./Add card/Addcard"
+import ServiceList from "./Components/Services/ServiceList";
+import LaundryServiceDetail from "./Components/Services/LaundryServiceDetail";
+import Addcard from "./Components/Add card/Addcard"
 
 const App = () => {
   const [filters, setFilters] = useState({

@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import HomeServiceCard from "./HomeServiceCard";
 import Search from "./Search";
-import Wash from "../assets/Wash & Iron.jpg";
-import iron from "../assets/Iron.jpg";
-import fold from "../assets/Fold.jpg";
-import dry from "../assets/Dry.jpg";
-import carpet from "../assets/carpet.jpg";
-import Steam from "../assets/steam1.jpg";
+import Wash from "../../assets/Wash & Iron.jpg";
+import iron from "../../assets/Iron.jpg";
+import fold from "../../assets/Fold.jpg";
+import dry from "../../assets/Dry.jpg";
+import carpet from "../../assets/carpet.jpg";
+import Steam from "../../assets/steam1.jpg";
 import Filters from "./Filters";
-import Header from "./Header";
+import Header from "../Header";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../Redux/cartSlice";
+import { addToCart } from "../../Redux/cartSlice";
 
 const services = [
   {
