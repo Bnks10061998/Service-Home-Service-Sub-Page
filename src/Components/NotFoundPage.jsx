@@ -23,15 +23,15 @@ const NotFoundPage = () => {
             looking for doesn't exist or has been moved.
           </span>
         </p>
-
+          <div className="flex items-center justify-center ">
         <button
-          className="btn btn-primary d-flex align-items-center justify-content-center mx-auto"
+          className=" btn btn-primary flex items-center justify-center  px-8 text-lg space-x-4"
           onClick={handleBackToHome}
         >
-          <FaHome className="me-2" />
+          <FaHome className="me-5 " />
           Back to Home
         </button>
-      </div>
+      </div></div>
     </div>
   );
 };
