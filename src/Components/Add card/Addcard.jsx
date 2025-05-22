@@ -10,7 +10,6 @@ import {
   removeFromCart,
 } from "../../Redux/cartSlice";
 
-
 function Addcard() {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -42,47 +41,45 @@ function Addcard() {
       <h1 className="text-2xl md:text-3xl font-bold text-blue-900 mb-5">My Cart</h1>
 
       {cartItems.length === 0 ? (
-        <div className="text-center text-gray-500 text-3xl md:text-5xl py-20">
+        <div className="text-center text-gray-500 text-2xl md:text-4xl py-20">
           🛒 Your cart is empty.
         </div>
       ) : (
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Left Section */}
           <div className="flex-1">
-            <div className="flex md:items-center bg-blue-100 rounded-2xl px-4 py-3 md:px-5 md:py-4 mb-4 w-full">
-              <div className="bg-blue-200 p-2 sm:p-3 rounded-full flex items-center justify-center">
+            <div className="flex flex-col sm:flex-row sm:items-center bg-blue-100 rounded-2xl px-4 py-3 md:px-5 md:py-4 mb-4 w-full">
+              <div className="bg-blue-200 p-2 sm:p-3 rounded-full flex items-center justify-center w-fit">
                 <FaShoppingCart className="text-blue-900 text-base sm:text-lg" />
               </div>
-              <div className="ml-3">
-                <p className="font-semibold text-sm text-black m-0">Service Cart</p>
+              <div className="ml-0 sm:ml-3 mt-2 sm:mt-0">
+                <p className="font-semibold text-sm text-black">Service Cart</p>
                 <p className="flex items-center text-sm text-blue-900 mt-1">
                   <FaMapMarkerAlt className="text-xs mr-1" /> Shopping in 07114
                 </p>
               </div>
             </div>
 
-           
-              <div
-               
-                className="bg-white shadow-md rounded-lg p-3 md:p-4 min-h-56"
-              >
-                 {cartItems.map((item) => (
-                <div 
-                 key={item.id} className="flex items-center gap-4 bg-blue-50 rounded-xl p-3 mb-4">
+            <div className="bg-white shadow-md rounded-lg p-3 md:p-4">
+              {cartItems.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex flex-col sm:flex-row items-center gap-4 bg-blue-50 rounded-xl p-3 mb-4"
+                >
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-20 h-20 object-cover rounded-lg"
+                    className="w-24 h-24 object-cover rounded-lg"
                   />
-                  <div className="flex-1 md:flex justify-between items-center">
-                    <div>
-                      <p className="font-bold">{item.title}</p>
-                      <div className="flex gap-2 items-center">
+                  <div className="flex-1 w-full sm:flex justify-between items-center">
+                    <div className="mb-2 sm:mb-0">
+                      <p className="font-bold text-base sm:text-lg">{item.title}</p>
+                      <div className="flex gap-2 items-center mt-1">
                         <span className="text-blue-900 font-semibold">₹{item.price}</span>
                         <p className="line-through text-gray-500 text-sm">₹300</p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-4 mt-3 md:mt-0">
+                    <div className="flex flex-col sm:flex-row items-center gap-3 mt-2 sm:mt-0">
                       <div className="flex items-center bg-white rounded-full px-3 py-1 gap-2 shadow">
                         <button
                           className="w-6 h-6 rounded-full bg-gray-400 text-white font-bold hover:bg-blue-900"
@@ -98,7 +95,7 @@ function Addcard() {
                           +
                         </button>
                       </div>
-                      <div className="flex items-center gap-4">
+                      <div className="flex items-center gap-2 sm:gap-4">
                         <FaRegTrashAlt
                           className="text-blue-900 text-lg cursor-pointer"
                           onClick={() => handleRemove(item.id)}
@@ -111,12 +108,12 @@ function Addcard() {
                     </div>
                   </div>
                 </div>
-            ))}
+              ))}
             </div>
           </div>
 
           {/* Right Section */}
-          <div className="w-full lg:w-96 bg-blue-50 p-4 sm:p-6 rounded-lg shadow-md max-h-[300px]">
+          <div className="w-full lg:w-96 max-h-[300px] bg-blue-50 p-4 sm:p-6 rounded-lg shadow-md">
             <p className="text-sm text-gray-500 mb-3 sm:mb-4">
               Free delivery + saving ₹3.00 on this order
               <span className="text-blue-500 cursor-pointer ml-1">Go to</span>
@@ -135,7 +132,7 @@ function Addcard() {
                 <span className="font-bold">Free</span>
               </div>
               <div className="flex justify-between font-bold text-gray-800 border-t pt-2 mb-4">
-                <span>Subtotal({totalQuantity} items)</span>
+                <span>Subtotal ({totalQuantity} items)</span>
                 <span>₹{calculateTotal()}</span>
               </div>
               <button className="w-full bg-indigo-500 hover:bg-blue-900 text-white font-bold py-2 sm:py-3 rounded-full transition duration-300">
@@ -152,7 +149,3 @@ function Addcard() {
 }
 
 export default Addcard;
-
-
-
-
