@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import {
   FaStar,
@@ -11,7 +10,6 @@ import laundryImage from "../../assets/webp/LaundryImage.webp";
 import { Heart } from "lucide-react";
 import coinImage from "../../assets/webp/S Coins.webp";
 import { motion, AnimatePresence } from "framer-motion";
-
 
 const LaundryServiceDetail = () => {
   const location = useLocation();
@@ -48,15 +46,15 @@ const LaundryServiceDetail = () => {
   ).toFixed(1);
 
   return (
-    <div className="max-w-6xl ml-[180px] bg-white mt-10 mb-20 p-4 rounded-md shadow-md">
+    <div className="max-w-6xl mx-auto bg-white mt-10 mb-20 px-4 sm:px-6 lg:px-8 rounded-md shadow-md">
       {/* Image Section */}
       <div className="relative">
         <img
           src={passedImage}
           alt="Laundry"
-          className="w-full h-[550px] object- rounded-md"
+          className="w-full max-h-[500px] object-cover rounded-md"
         />
-        <div className="absolute top-8 right-8 flex gap-2">
+        <div className="absolute top-4 right-4 flex gap-2">
           <button
             className="bg-white p-2 rounded-full shadow hover:bg-red-100"
             onClick={() => setLiked(!liked)}
@@ -81,7 +79,7 @@ const LaundryServiceDetail = () => {
         <h2 className="text-2xl font-bold text-blue-900">
           Premium {passedTitle}
         </h2>
-        <div className="flex items-center gap-3 text-sm mt-2 text-gray-600">
+        <div className="flex flex-wrap items-center gap-3 text-sm mt-2 text-gray-600">
           <span className="flex items-center gap-1">
             <FaStar size={16} className="text-yellow-400" /> {passedRating} ({passedReviews})
           </span>
@@ -124,10 +122,10 @@ const LaundryServiceDetail = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: activeTab === "details" ? 30 : -30 }}
           transition={{ duration: 0.3 }}
-          className="mt-6 flex flex-col md:flex-row gap-6"
+          className="mt-6 flex flex-col lg:flex-row gap-6"
         >
           {/* Left Column */}
-          <div className="md:w-[65%] w-full space-y-6">
+          <div className="lg:w-2/3 w-full space-y-6">
             {activeTab === "details" ? (
               <div className="bg-gray-50 border rounded-md shadow-sm p-6 md:p-7">
                 <h3 className="text-blue-700 font-semibold text-xl mb-4">
@@ -198,71 +196,37 @@ const LaundryServiceDetail = () => {
           </div>
 
           {/* Right Column */}
-          <div className="md:w-[35%] w-full">
+          <div className="lg:w-1/3 w-full">
             {activeTab === "details" ? (
               <div className="bg-white border rounded-lg shadow p-5 space-y-5">
-<div>
-    <h4 className="text-lg font-semibold text-blue-900">Pickup & Delivery</h4>
-    <p className="text-sm text-gray-700">
-      Free pickup & delivery available within city limits
-    </p>
-  </div>
-  
-  <div>
-    <h4 className="text-lg font-semibold text-blue-900">Features</h4>
-    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-      <li>Eco-friendly detergents</li>
-      <li>Premium fabric care</li>
-    </ul>
-  </div>
-  
-  <div>
-    <h4 className="text-lg font-semibold text-blue-900">Service Hours</h4>
-    <p className="text-sm text-gray-700">Mon–Sat: 8:00 AM – 9:00 PM</p>
-    <p className="text-sm text-gray-700">Sun: 9:00 AM – 5:00 PM</p>
-  </div>
-</div>
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-900">Pickup & Delivery</h4>
+                  <p className="text-sm text-gray-700">
+                    Free pickup & delivery available within city limits
+                  </p>
+                </div>
 
-              // <div className="bg-white border rounded-lg shadow p-5 space-y-5">
-              //   <div>
-              //     <h4 className="text-lg font-semibold text-blue-900">
-              //       Price Summary
-              //     </h4>
-              //     <p className="text-gray-700 mt-1">
-              //       Starting at{" "}
-              //       <span className="font-bold text-green-600">₹199</span>
-              //     </p>
-              //   </div>
-              //   <div>
-              //     <h4 className="text-lg font-semibold text-blue-900">
-              //       Current Offer
-              //     </h4>
-              //     <p className="text-sm text-green-700">
-              //       ✔ 10% OFF on first order
-              //     </p>
-              //     <p className="text-xs text-gray-500">
-              //       Use code:{" "}
-              //       <span className="font-mono text-blue-700">WELCOME10</span>
-              //     </p>
-              //   </div>
-              //   <div>
-              //     <h4 className="text-lg font-semibold text-blue-900">
-              //       Service Hours
-              //     </h4>
-              //     <p className="text-sm text-gray-700">
-              //       Mon–Sat: 9:00 AM – 7:00 PM
-              //     </p>
-              //     <p className="text-sm text-gray-700">Sun: Closed</p>
-              //   </div>
-              // </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-900">Features</h4>
+                  <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
+                    <li>Eco-friendly detergents</li>
+                    <li>Premium fabric care</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-semibold text-blue-900">Service Hours</h4>
+                  <p className="text-sm text-gray-700">Mon–Sat: 8:00 AM – 9:00 PM</p>
+                  <p className="text-sm text-gray-700">Sun: 9:00 AM – 5:00 PM</p>
+                </div>
+              </div>
             ) : (
               <div className="bg-white border rounded-lg shadow p-5 space-y-4">
                 <h4 className="text-lg font-bold text-gray-900">
                   Ratings and reviews
                 </h4>
                 <p className="text-xs text-gray-600">
-                  Ratings are verified from customers who booked via Quick
-                  Finder.
+                  Ratings are verified from customers who booked via Quick Finder.
                 </p>
                 <div className="text-4xl font-bold text-blue-700">
                   {averageRating}
@@ -291,21 +255,21 @@ const LaundryServiceDetail = () => {
         </motion.div>
       </AnimatePresence>
 
-      
-      <div className="flex flex-col sm:flex-row gap-4 mt-6">
+      {/* Action Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 mt-6 mb-4">
         <button
-           className="w-full sm:w-1/2 py-2 border border-blue-600 text-blue-700 rounded font-medium hover:bg-blue-50"
-           onClick={() => navigate("/cart", { state: { service: passedTitle } })}
-         >
-           Add to Cart
-         </button>
-         <button
-           onClick={handleBookNow}
-           className="w-full sm:w-1/2 py-2 bg-blue-700 text-white rounded font-medium hover:bg-blue-800"
-         >
-           Book Now
-         </button>
-       </div> 
+          className="w-full sm:w-1/2 py-2 border border-blue-600 text-blue-700 rounded font-medium hover:bg-blue-50"
+          onClick={() => navigate("/cart", { state: { service: passedTitle } })}
+        >
+          Add to Cart
+        </button>
+        <button
+          onClick={handleBookNow}
+          className="w-full sm:w-1/2 py-2 bg-blue-700 text-white rounded font-medium hover:bg-blue-800"
+        >
+          Book Now
+        </button>
+      </div>
     </div>
   );
 };
