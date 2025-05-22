@@ -117,17 +117,16 @@ const ServiceCard = () => {
   };
 
   return (
-    <div className="min-h-screen py-10 px-24 text-center bg-white-700">
-      <h2 className="text-[35px] underline underline-offset-4 mb-20"  
-      style={{ color: '#013686',textDecorationColor: '#013686' }}>Our Services</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-0 gap-y-14">
-        <div className="p-4 flex grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-96 gap-y-14 justify-center ml-[31rem]">
-        {services.map((service, index) => (
-          <div key={index} className="relative w-fit mx-auto">
-            <motion.div
-              className={`bg-gradient-to-br ${service.bg} rounded-2xl p-3 shadow-lg w-[320px] min-h-[280px] flex flex-col justify-between pb-12 clip-bottom-right-eye`}
-          
+    <div className="min-h-screen py-12 px-4 sm:px-6 md:px-10 lg:px-20 bg-white">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl text-center font-bold underline underline-offset-4 mb-14 text-[#013686]" style={{ textDecorationColor: '#013686' }}>
+        Our Services
+      </h2>
 
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
+        {services.map((service, index) => (
+          <div key={index} className="relative w-full max-w-[320px]">
+            <motion.div
+              className={`bg-gradient-to-br ${service.bg} rounded-2xl p-5 shadow-lg min-h-[280px] flex flex-col justify-between pb-14 clip-bottom-right-eye`}
               custom={index}
               variants={cardVariants}
               initial="hidden"
@@ -140,7 +139,7 @@ const ServiceCard = () => {
               }}
             >
               <div>
-                <div className="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center mb-2 mx-auto">
+                <div className="w-20 h-20 rounded-full bg-white shadow flex items-center justify-center mb-4 mx-auto">
                   <img
                     src={service.icon}
                     alt={service.title}
@@ -151,24 +150,24 @@ const ServiceCard = () => {
                     className="object-contain"
                   />
                 </div>
-
-                <h3 className="text-[#013686] text-xl font-semibold mb-2">
+                <h3 className="text-[#013686] text-xl font-semibold mb-2 text-center">
                   {service.title}
                 </h3>
-                <p className="text-gray-700 text-lg pl-3 pr-3">{service.desc}</p>
+                <p className="text-gray-700 text-base text-center px-3">
+                  {service.desc}
+                </p>
               </div>
             </motion.div>
             <motion.button
-                onClick={() => handleBookNow(service.link)}
-                className="group absolute bottom-[-4px] right-[-4px] w-12 h-12 rounded-full border-4 border-blue-500 flex items-center justify-center bg-white text-[#013686] shadow-xl transition-all duration-100 ease-in-out hover:bg-gradient-to-r hover:from-blue-400 hover:via-indigo-400 hover:to-blue-400 hover:text-white z-10"
-                whileHover={{ scale: 1.0, rotate: -15 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              >
-                <MdChevronRight className="text-3xl" />
-              </motion.button> 
+              onClick={() => handleBookNow(service.link)}
+              className="group absolute bottom-[-10px] right-[-10px] w-12 h-12 rounded-full border-4 border-blue-500 flex items-center justify-center bg-white text-[#013686] shadow-xl transition-all duration-100 ease-in-out hover:bg-gradient-to-r hover:from-blue-400 hover:via-indigo-400 hover:to-blue-400 hover:text-white z-10"
+              whileHover={{ scale: 1.0, rotate: -15 }}
+              transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            >
+              <MdChevronRight className="text-3xl" />
+            </motion.button>
           </div>
         ))}
-        </div>
       </div>
     </div>
   );

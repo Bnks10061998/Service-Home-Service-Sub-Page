@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -25,8 +24,7 @@ import sampleImage16 from "../assets/webp/MedicalImage1.webp";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import './Valuesanimate.css';
-
+import "./Valuesanimate.css";
 
 export default function ValuesSection() {
   const values = [
@@ -44,7 +42,7 @@ export default function ValuesSection() {
     sampleImage44,
     sampleImage6,
     sampleImage1,
-    sampleImage3, 
+    sampleImage3,
     sampleImage8,
     sampleImage11,
     sampleImage16,
@@ -63,9 +61,9 @@ export default function ValuesSection() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-blue-100 to-blue-200 py-16 px-6 md:px-20 flex flex-col md:flex-row items-start justify-between min-h-[500px] gap-10">
+    <div className="bg-gradient-to-r from-blue-100 to-blue-200 py-12 px-4 sm:px-8 md:px-20 flex flex-col md:flex-row items-start justify-between min-h-[500px] gap-8 sm:gap-10">
       {/* Swiper Section */}
-      <div className="md:w-1/2 flex justify-center relative">
+      <div className="md:w-1/2 w-full flex justify-center relative max-w-full">
         <Swiper
           modules={[Navigation, Pagination, Autoplay, EffectCube]}
           effect="cube"
@@ -88,7 +86,7 @@ export default function ValuesSection() {
               />
             </SwiperSlide>
           ))}
-          
+
           <button
             className="custom-swiper-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 hover:bg-blue-100 transition"
             aria-label="Previous"
@@ -104,29 +102,46 @@ export default function ValuesSection() {
         </Swiper>
       </div>
 
-      <div className="md:w-1/2 flex flex-col justify-start">
+      {/* Values Section */}
+      <div className="md:w-1/2 w-full flex flex-col justify-start">
         <div className="flex flex-col items-center justify-center text-center px-4 py-6">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Our <span className="animate-border-glow px-2 rounded">Values</span>, Your <span className="animate-border-glow px-2 rounded">Satisfaction</span>
+            Our{" "}
+            <span className="animate-border-glow px-2 rounded">
+              Values
+            </span>
+            , Your{" "}
+            <span className="animate-border-glow px-2 rounded">
+              Satisfaction
+            </span>
           </h2>
         </div>
 
         <div className="space-y-4">
           {valueRows.map((row, rowIndex) => (
-            <div key={rowIndex} className="flex justify-center gap-4 flex-wrap">
+            <div
+              key={rowIndex}
+              className="flex justify-center gap-4 flex-wrap"
+            >
               {row.map((val, index) => {
                 let animationEffect = "";
-                if (val === "Professionalism & Expertise") animationEffect = "fade-up";
-                if (val === "Eco-Friendly & Safe Clean") animationEffect = "fade-right";
-                if (val === "Customer Satisfaction First") animationEffect = "zoom-in";
-                if (val === "Integrity & Transparency") animationEffect = "fade-left";
-                if (val === "Efficiency & Reliability") animationEffect = "fade-down";
-                if (val === "Continuous Improvement") animationEffect = "zoom-out";
+                if (val === "Professionalism & Expertise")
+                  animationEffect = "fade-up";
+                if (val === "Eco-Friendly & Safe Clean")
+                  animationEffect = "fade-right";
+                if (val === "Customer Satisfaction First")
+                  animationEffect = "zoom-in";
+                if (val === "Integrity & Transparency")
+                  animationEffect = "fade-left";
+                if (val === "Efficiency & Reliability")
+                  animationEffect = "fade-down";
+                if (val === "Continuous Improvement")
+                  animationEffect = "zoom-out";
 
                 return (
                   <div
                     key={index}
-                    className={`bg-blue-100 hover:bg-blue-200 text-[#013686] font-medium px-4 py-3 rounded-full text-[18px] text-center shadow-md transition-transform duration-300 hover:scale-105 w-full max-w-[260px]`}
+                    className="bg-blue-100 hover:bg-blue-200 text-[#013686] font-medium px-4 py-3 rounded-full text-[18px] text-center shadow-md transition-transform duration-300 hover:scale-105 w-full max-w-[260px]"
                     data-aos={animationEffect}
                   >
                     {val}
@@ -140,20 +155,3 @@ export default function ValuesSection() {
     </div>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
