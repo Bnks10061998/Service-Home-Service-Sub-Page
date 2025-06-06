@@ -1,0 +1,29 @@
+
+
+
+  .clip-bottom-right-eye {
+    position: relative;
+    overflow: hidden;
+  }
+  
+
+  .clip-bottom-right-eye::after {
+    content: "";
+    position: absolute;
+    top:215px;
+    bottom: -2px;
+    right: -4px;
+    width: 70px; 
+    height: 80px; 
+    background-color: white;
+    border-radius: 200% 0 0 10% / 200% 0 0 100%;
+    transform: rotate(-1deg);
+    z-index: 1;
+    box-shadow: white;
+  } 
+ 
+
+
+  
+  
+  

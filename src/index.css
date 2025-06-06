@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Roboto", "Sans-sarif";
+}
+
+
+.input-style {
+  @apply w-full px-4 pt-3 pb-2 border border-gray-500 rounded text-sm bg-transparent;
+}
+
+.myOrder_btn{
+@apply flex-1 border border-gray-300 text-sm py-2 rounded-xl hover:bg-gray-100
+}
+
+.group:hover .fa-icon {
+  transition: transform 0.6s;
+  transform: rotateY(360deg); /* Flip effect */
+  transform-style: preserve-3d; /* Ensures 3D effect */
+}
+
